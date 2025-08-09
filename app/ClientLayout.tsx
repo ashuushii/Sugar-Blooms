@@ -4,6 +4,7 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Image from "next/image"
+import Head from "next/head"
 import { ExternalLink, Menu, X } from "lucide-react"
 import { BowBackground } from "@/components/BowBackground"
 import { useState } from "react"
@@ -23,6 +24,9 @@ export default function ClientLayout({
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/sugar.ico" type="image/x-icon" />
+      </Head>
       <body className={inter.className}>
         <BowBackground />
         <div className="min-h-screen relative z-10">
