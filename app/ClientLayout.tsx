@@ -34,24 +34,38 @@ export default function ClientLayout({
                   <Image
                     src="/logo.png"
                     alt="Sugar Blooms Bakery Logo"
-                    width={32}
-                    height={32}
+                    width={40}
+                    height={40}
                     className="rounded-full shadow-md"
                   />
-                  <h1 className="text-sm font-bold text-pink-600 font-serif whitespace-nowrap">Sugar Blooms</h1>
+                  <h1 className="text-sm font-bold text-pink-600 font-serif whitespace-nowrap">
+                    Sugar Blooms
+                  </h1>
                 </div>
-                
+
                 <div className="flex items-center space-x-6">
-                  <a href="/" className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50">
+                  <a
+                    href="/"
+                    className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50"
+                  >
                     Home
                   </a>
-                  <a href="/cupcakes" className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50">
+                  <a
+                    href="/cupcakes"
+                    className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50"
+                  >
                     Cupcakes
                   </a>
-                  <a href="/contact" className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50">
+                  <a
+                    href="/contact"
+                    className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50"
+                  >
                     Contact
                   </a>
-                  <a href="/recipes" className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50">
+                  <a
+                    href="/recipes"
+                    className="text-pink-600 hover:text-pink-800 font-medium transition-colors text-sm px-3 py-1 rounded-full hover:bg-pink-50"
+                  >
                     Recipes
                   </a>
                 </div>
@@ -71,14 +85,20 @@ export default function ClientLayout({
                     height={40}
                     className="rounded-full shadow-md"
                   />
-                  <h1 className="text-base font-bold text-pink-600 font-serif whitespace-nowrap">Sugar Blooms</h1>
+                  <h1 className="text-base font-bold text-pink-600 font-serif whitespace-nowrap">
+                    Sugar Blooms
+                  </h1>
                 </div>
-                
+
                 <button
                   onClick={toggleMenu}
                   className="absolute right-0 p-2 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
-                  {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                  {isMenuOpen ? (
+                    <X className="w-5 h-5" />
+                  ) : (
+                    <Menu className="w-5 h-5" />
+                  )}
                 </button>
               </div>
 
@@ -86,22 +106,22 @@ export default function ClientLayout({
               {isMenuOpen && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-md border-2 border-pink-200 rounded-2xl shadow-2xl overflow-hidden">
                   <div className="py-2">
-                    <a 
-                      href="/" 
+                    <a
+                      href="/"
                       className="block px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-sm"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Home
                     </a>
-                    <a 
-                      href="/cupcakes" 
+                    <a
+                      href="/cupcakes"
                       className="block px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-sm"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Cupcakes
                     </a>
-                    <a 
-                      href="/contact" 
+                    <a
+                      href="/contact"
                       className="block px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-sm"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -122,32 +142,38 @@ export default function ClientLayout({
           {children}
           <footer className="relative py-20 px-4 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-50/30 to-pink-300/60"></div>
-            <div 
+            <div
               className="absolute inset-0 opacity-20"
               style={{
                 backgroundImage: "url('/bow.png')",
                 backgroundRepeat: "repeat",
-                backgroundSize: "100px"
+                backgroundSize: "100px",
               }}
             />
             <div className="container mx-auto text-center relative z-10">
               <div className="flex items-center justify-center space-x-3 mb-8">
                 <Image
-                  src="/sugar-blooms-logo.png"
+                  src="/logo.png"
                   alt="Sugar Blooms Bakery Logo"
                   width={80}
                   height={80}
-                  className="rounded-full bg-white p-2 shadow-lg"
+                  className="rounded-full bg-white shadow-lg"
                 />
-                <h4 className="text-3xl font-bold font-serif text-pink-700">Sugar Blooms Bakery</h4>
+                <h4 className="text-3xl font-bold font-serif text-pink-700">
+                  Sugar Blooms
+                </h4>
               </div>
-              <p className="text-pink-600 mb-6 text-lg font-medium">{"spreading sweetness, one cupcake at a time"}</p>
+              <p className="text-pink-600 mb-6 text-lg font-medium">
+                {"made with love and lots of sugar"}
+              </p>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-400 to-transparent mb-6 max-w-xs mx-auto"></div>
-              <p className="text-pink-500 text-sm">{"© 2025 sugar blooms bakery. made with love and lots of sugar"}</p>
+              <p className="text-pink-500 text-sm">
+                {"© 2025 sugar blooms co."}
+              </p>
             </div>
           </footer>
         </div>
       </body>
     </html>
-  )
+  );
 }

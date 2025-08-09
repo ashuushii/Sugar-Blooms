@@ -28,7 +28,7 @@ export default function Component() {
             >
               <div className="mb-6">
                 <span className="inline-block text-sm text-pink-500 font-medium tracking-wider uppercase mb-4 opacity-80">
-                  handcrafted in london
+                  cupcake bakery
                 </span>
               </div>
               
@@ -56,7 +56,7 @@ export default function Component() {
                 className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-0"
                 asChild
               >
-                <a href="/contact">order cupcakes</a>
+                <a href="/contact">how to order</a>
               </Button>
             </div>
 
