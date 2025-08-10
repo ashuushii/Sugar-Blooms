@@ -9,8 +9,8 @@ import { Badge } from "@/components/ui/badge";
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
-      title: "Our Offers",
-      description: "our most popular cupcakes, loved by all",
+      title: "sweet selection:",
+      // description: "our most popular cupcakes, loved by all",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
@@ -36,8 +36,7 @@ export default function CupcakesPage() {
             "vanilla basecupcake with your custom buttercream design & decorations",
           price: "£16 for 4 | £21 for 6 | £36 for 12",
           image: "/cupcakes-roses.jpeg",
-          loved: true,
-          flavors: ["vanilla"],
+          flavors: ["chocolate", "vanilla", "strawberry"],
         },
       ],
     },
@@ -56,8 +55,8 @@ export default function CupcakesPage() {
           </div>
           <p className="text-xl text-pink-700 max-w-3xl mx-auto leading-relaxed">
             each cupcake is handcrafted with love, premium ingredients, and a
-            signature feminine touch — pretty pink designs that are as elegant
-            as they are delicious.
+            signature feminine touch pretty pink designs that are as elegant as
+            they are delicious.
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
             <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />

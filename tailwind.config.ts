@@ -57,7 +57,7 @@ const config: Config = {
           50: "#fdf2f8",
           100: "#fce7f3",
           200: "#fbcfe8",
-          300: "#f9a8d4",
+          300: "#ffabbf",
           400: "#f472b6",
           500: "#ec4899",
           600: "#db2777",
@@ -100,6 +100,6 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
 export default config

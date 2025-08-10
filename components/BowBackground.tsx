@@ -50,12 +50,14 @@ export const BowBackground = () => {
                 top: bow.top,
                 opacity: bow.opacity,
                 transform: `${bow.transform} translateY(${translateY}px)`,
-                transition: 'transform 0.5s ease-out',
+                transition: "transform 0.5s ease-out",
               }}
             >
-              🎀
+              {/*🎀
+               */}
+              <img src="/bow.png" alt="Bow" className="w-20 h-20" />
             </div>
-          )
+          );
         })}
       </div>
     </div>
