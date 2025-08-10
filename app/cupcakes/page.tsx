@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Star, Heart, Sparkles, Cherry } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import Image from "next/image";
+import { Star, Heart, Sparkles, Cherry } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
-      title: "Signature Collection",
-      description: "our most beloved creations",
+      title: "Our Offers",
+      description: "our most popular cupcakes, loved by all",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
           description:
             "vanilla cupcake with smooth buttercream and handcrafted pink fondant bow",
-          price: "£8 for 4 | £12 for 6 | £18 for 12",
+          price: "£12 for 4 | £15 for 6 | £24 for 12",
           image: "/cupcakes-bows.jpeg",
           popular: true,
           flavors: ["vanilla"],
@@ -25,7 +25,16 @@ export default function CupcakesPage() {
           name: "Rosé Swirl",
           description:
             "delicate vanilla cupcake with rose pink buttercream swirls and pearl decorations",
-          price: "£8 for 4 | £12 for 6 | £18 for 12",
+          price: "£12 for 4 | £15 for 6 | £24 for 12",
+          image: "/cupcakes-roses.jpeg",
+          loved: true,
+          flavors: ["vanilla"],
+        },
+        {
+          name: "Custom Design",
+          description:
+            "vanilla basecupcake with your custom buttercream design & decorations",
+          price: "£16 for 4 | £21 for 6 | £36 for 12",
           image: "/cupcakes-roses.jpeg",
           loved: true,
           flavors: ["vanilla"],
@@ -46,13 +55,14 @@ export default function CupcakesPage() {
             <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
           </div>
           <p className="text-xl text-pink-700 max-w-3xl mx-auto leading-relaxed">
-            each little cake is handcrafted with love, premium ingredients, and
-            a sprinkle of magic
+            each cupcake is handcrafted with love, premium ingredients, and a
+            signature feminine touch — pretty pink designs that are as elegant
+            as they are delicious.
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
             <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
             <span className="text-pink-500 text-sm font-medium">
-              made fresh daily in our london kitchen
+              made fresh daily in our home kitchen
             </span>
             <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
           </div>

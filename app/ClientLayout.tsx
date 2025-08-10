@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Image from "next/image"
-import Head from "next/head"
-import { ExternalLink, Menu, X } from "lucide-react"
-import { BowBackground } from "@/components/BowBackground"
-import { useState } from "react"
+import type React from "react";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Image from "next/image";
+import Head from "next/head";
+import { ExternalLink, Menu, X } from "lucide-react";
+import { BowBackground } from "@/components/BowBackground";
+import { useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function ClientLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <html lang="en">
