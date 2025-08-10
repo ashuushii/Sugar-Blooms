@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Sugar Blooms",
     images: [
       {
-        url: "/website-banner.png",
+        url: "https://sugarblooms.co.uk/website-banner.png",
         width: 1200,
         height: 630,
         alt: "Sugar Blooms Cupcake Bakery"
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sugar Blooms｜London",
     description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!",
-    images: ["/website-banner.png"]
+    images: ["https://sugarblooms.co.uk/website-banner.png"]
   },
   icons: {
     icon: [
