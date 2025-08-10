@@ -35,7 +35,7 @@ export default function CupcakesPage() {
           description:
             "vanilla basecupcake with your custom buttercream design & decorations",
           price: "£16 for 4 | £21 for 6 | £36 for 12",
-          image: "/cupcakes-roses.jpeg",
+          image: "/vanillacupcakes.jpeg",
           flavors: ["chocolate", "vanilla", "strawberry"],
         },
       ],
@@ -142,7 +142,7 @@ export default function CupcakesPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          order these cuties
+                          order now
                         </a>
                       </Button>
                     </div>

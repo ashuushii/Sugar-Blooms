@@ -188,7 +188,7 @@ export default function RecipesPage() {
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               {/* CHANGE TAGLINE HERE */}
-              <span className="text-pink-500 text-sm font-medium">cupcake & frosting</span>
+              <span className="text-pink-500 text-sm font-medium">cupcakes & frosting</span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
           </div>
