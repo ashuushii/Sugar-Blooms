@@ -14,22 +14,13 @@ export const metadata: Metadata = {
     description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!",
     url: "https://sugarblooms.co.uk",
     siteName: "Sugar Blooms",
-    images: [
-      {
-        url: "https://sugarblooms.co.uk/website-banner.png",
-        width: 1200,
-        height: 630,
-        alt: "Sugar Blooms Cupcake Bakery"
-      }
-    ],
     locale: "en_GB",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
     title: "Sugar Blooms｜London",
-    description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!",
-    images: ["https://sugarblooms.co.uk/website-banner.png"]
+    description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!"
   },
   icons: {
     icon: [
