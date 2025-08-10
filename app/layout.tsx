@@ -7,6 +7,7 @@ import ClientLayout from "./ClientLayout"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sugarblooms.co.uk"),
   title: "Sugar Blooms｜London",
   description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!",
   openGraph: {
