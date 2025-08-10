@@ -7,9 +7,8 @@ import ClientLayout from "./ClientLayout"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Sugar Blooms Bakery",
-  description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!",
-    generator: 'v0.dev'
+  title: "Sugar Blooms｜London",
+  description: "Handcrafted cupcakes made with love, sprinkles, and a touch of magic!"
 }
 
 export default function RootLayout({

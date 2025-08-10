@@ -4,8 +4,7 @@ import type React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import Head from "next/head";
-import { ExternalLink, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { useState } from "react";
 
@@ -24,9 +23,6 @@ export default function ClientLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/sugar.ico" type="image/x-icon" />
-      </Head>
       <body className={inter.className}>
         <BowBackground />
         <div className="min-h-screen relative z-10">
@@ -40,9 +36,9 @@ export default function ClientLayout({
                     alt="Sugar Blooms Bakery Logo"
                     width={40}
                     height={40}
-                    className="rounded-full shadow-md"
+                    className="rounded-full shadow-md w-10 h-10 flex-shrink-0"
                   />
-                  <h1 className="text-sm font-bold text-pink-600 font-serif whitespace-nowrap">
+                  <h1 className="hidden lg:block text-sm font-bold text-pink-600 font-serif whitespace-nowrap">
                     Sugar Blooms
                   </h1>
                 </div>
