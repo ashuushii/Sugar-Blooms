@@ -14,7 +14,7 @@ export default function RecipesPage() {
   const cupcakeRecipes = [
     {
       name: "Classic Vanilla Cupcakes",
-      // Image used: /cupcakes-box.jpeg (change this filename to use a different image)
+      // Image used: /vanillacupcakes.jpeg
       prepTime: "20 mins",
       cookTime: "18 mins", 
       serves: "12 cupcakes",
@@ -37,7 +37,7 @@ export default function RecipesPage() {
     },
     {
       name: "Chocolate Dream Cupcakes",
-      // Image used: /cupcakes-box.jpeg (change this filename to use a different image)
+      // Image used: /chocolatecupcakes.jpeg
       prepTime: "25 mins",
       cookTime: "20 mins",
       serves: "12 cupcakes", 
@@ -61,7 +61,7 @@ export default function RecipesPage() {
     },
     {
       name: "Strawberry Bliss Cupcakes",
-      // Image used: /cupcakes-box.jpeg (change this filename to use a different image)
+      // Image used: /strawberrycupcakes.jpeg
       prepTime: "30 mins",
       cookTime: "18 mins",
       serves: "12 cupcakes",
@@ -150,9 +150,17 @@ export default function RecipesPage() {
                 </div>
                 <CardHeader className="pb-4 relative">
                   <div className="relative mb-4 overflow-hidden rounded-2xl">
-                    {/* IMAGE: Change /cupcakes-box.jpeg to your image filename */}
+                    {/* IMAGE: Use correct cupcake image for each recipe */}
                     <Image
-                      src="/cupcakes-box.jpeg"
+                      src={
+                        recipe.name === "Classic Vanilla Cupcakes"
+                          ? "/vanillacupcakes.jpeg"
+                          : recipe.name === "Chocolate Dream Cupcakes"
+                          ? "/chocolatecupcakes.jpeg"
+                          : recipe.name === "Strawberry Bliss Cupcakes"
+                          ? "/strawberrycupcakes.jpeg"
+                          : "/cupcakes-box.jpeg"
+                      }
                       alt={recipe.name}
                       width={300}
                       height={200}
