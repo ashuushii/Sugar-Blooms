@@ -1,7 +1,7 @@
-import Image from "next/image"
-import { Heart, Clock, Users } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Image from "next/image";
+import { Heart, Clock, Users } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function RecipesPage() {
   // ========================================
@@ -10,17 +10,17 @@ export default function RecipesPage() {
   // To add a new recipe: copy one of the existing recipes below and modify it
   // To change images: replace the image file in /public/ folder with same name
   // To remove a recipe: delete the entire {...} object including the comma
-  
+
   const cupcakeRecipes = [
     {
       name: "Classic Vanilla Cupcakes",
       // Image used: /vanillacupcakes.jpeg
       prepTime: "20 mins",
-      cookTime: "18 mins", 
+      cookTime: "18 mins",
       serves: "12 cupcakes",
       ingredients: [
         "175g self-raising flour",
-        "175g caster sugar", 
+        "175g caster sugar",
         "175g butter, softened",
         "3 large eggs",
         "1 tsp vanilla extract",
@@ -40,14 +40,14 @@ export default function RecipesPage() {
       // Image used: /chocolatecupcakes.jpeg
       prepTime: "25 mins",
       cookTime: "20 mins",
-      serves: "12 cupcakes", 
+      serves: "12 cupcakes",
       ingredients: [
         "150g self-raising flour",
         "25g cocoa powder",
         "150g caster sugar",
         "150g butter, softened",
         "3 large eggs",
-        "1 tsp vanilla extract", 
+        "1 tsp vanilla extract",
         "100ml milk",
       ],
       instructions: [
@@ -68,7 +68,7 @@ export default function RecipesPage() {
       ingredients: [
         "175g self-raising flour",
         "175g caster sugar",
-        "175g butter, softened", 
+        "175g butter, softened",
         "3 large eggs",
         "100g fresh strawberries, chopped",
         "Pink food coloring (optional)",
@@ -83,12 +83,12 @@ export default function RecipesPage() {
         "Bake for 18-20 minutes until risen and golden.",
       ],
     },
-    
+
     // TO ADD A NEW RECIPE: Copy the structure above and add here
     // {
     //   name: "Your New Recipe Name",
     //   prepTime: "X mins",
-    //   cookTime: "X mins", 
+    //   cookTime: "X mins",
     //   serves: "X cupcakes",
     //   ingredients: [
     //     "ingredient 1",
@@ -99,7 +99,7 @@ export default function RecipesPage() {
     //     "step 2",
     //   ],
     // },
-  ]
+  ];
 
   // ========================================
   // FROSTING RECIPES - NEW SECTION
@@ -115,7 +115,7 @@ export default function RecipesPage() {
         "1 cup milk, warmed (full fat best)",
         "1 1/2 tsp vanilla extract",
         "Pinch of salt",
-        "225g (1 cup) unsalted butter, softened but not too soft"
+        "225g (1 cup) unsalted butter, softened but not too soft",
       ],
       instructions: [
         "Place flour and sugar in a large saucepan over medium heat. Cook, stirring constantly, for 30 seconds.",
@@ -125,9 +125,9 @@ export default function RecipesPage() {
         "Beat butter until smooth and pale yellow (about 3 minutes).",
         "On medium speed, add the thickened roux one heaped tablespoon at a time, beating as you go.",
         "Once all roux is added, add vanilla and salt, then whip for 2-3 minutes until fluffy and able to hold peaks.",
-        "Use to frost cakes or cupcakes. Can be piped or spread."
+        "Use to frost cakes or cupcakes. Can be piped or spread.",
       ],
-      image: "/fluffyvanillafrosting.jpeg"
+      image: "/fluffyvanillafrosting.jpeg",
     },
     {
       name: "Smooth Buttercream",
@@ -145,7 +145,7 @@ export default function RecipesPage() {
         "Add vanilla and milk, beat until smooth and fluffy.",
         "Use immediately or store covered for up to 2 days.",
       ],
-      image: "/buttercream.jpeg"
+      image: "/buttercream.jpeg",
     },
     {
       name: "Swiss Meringue Buttercream",
@@ -163,7 +163,7 @@ export default function RecipesPage() {
         "Transfer to mixer, whisk on high until stiff peaks form and bowl is cool.",
         "Add butter gradually, then vanilla, and beat until silky and smooth.",
       ],
-      image: "/swissmeringue.jpeg"
+      image: "/swissmeringue.jpeg",
     },
   ];
 
@@ -178,7 +178,9 @@ export default function RecipesPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
               {/* CHANGE PAGE TITLE HERE */}
-              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">sweet recipes</h1>
+              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+                sweet recipes
+              </h1>
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
             {/* CHANGE PAGE SUBTITLE HERE */}
@@ -188,29 +190,38 @@ export default function RecipesPage() {
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               {/* CHANGE TAGLINE HERE */}
-              <span className="text-pink-500 text-sm font-medium">cupcakes & frosting</span>
+              <span className="text-pink-500 text-sm font-medium">
+                cupcakes & frosting
+              </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
           </div>
         </div>
       </section>
 
-    {/* ========================================
+      {/* ========================================
       CUPCAKE RECIPES SECTION
       ======================================== */}
       <section className="py-20 px-4 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             {/* CHANGE SECTION TITLE HERE */}
-            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">cupcake recipes</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
+              cupcake recipes
+            </h2>
             {/* CHANGE SECTION DESCRIPTION HERE */}
-            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">perfect little treats for any celebration</p>
+            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
+              perfect little treats for any celebration
+            </p>
           </div>
 
-      {/* RECIPE CARDS - These automatically generate from the cupcakeRecipes array above */}
+          {/* RECIPE CARDS - These automatically generate from the cupcakeRecipes array above */}
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {cupcakeRecipes.map((recipe, index) => (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+              <Card
+                key={index}
+                className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
+              >
                 <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
                   <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
                 </div>
@@ -234,7 +245,9 @@ export default function RecipesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">{recipe.name}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">
+                    {recipe.name}
+                  </CardTitle>
                   <div className="flex items-center gap-4 text-sm text-pink-700">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
@@ -248,7 +261,9 @@ export default function RecipesPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="mb-4">
-                    <h4 className="font-bold text-pink-600 mb-2">Ingredients:</h4>
+                    <h4 className="font-bold text-pink-600 mb-2">
+                      Ingredients:
+                    </h4>
                     <ul className="text-sm text-pink-700 space-y-1">
                       {recipe.ingredients.map((ingredient, i) => (
                         <li key={i} className="flex items-start gap-2">
@@ -259,7 +274,9 @@ export default function RecipesPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-pink-600 mb-2">Instructions:</h4>
+                    <h4 className="font-bold text-pink-600 mb-2">
+                      Instructions:
+                    </h4>
                     <ol className="text-sm text-pink-700 space-y-2">
                       {recipe.instructions.map((step, i) => (
                         <li key={i} className="flex gap-2">
@@ -284,12 +301,19 @@ export default function RecipesPage() {
       <section className="py-20 px-4 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">frosting recipes</h2>
-            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">creamy toppings for your cupcakes</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
+              frosting recipes
+            </h2>
+            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
+              creamy toppings for your cupcakes
+            </p>
           </div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {frostingRecipes.map((recipe, index) => (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden">
+              <Card
+                key={index}
+                className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
+              >
                 <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
                   <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
                 </div>
@@ -304,7 +328,9 @@ export default function RecipesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">{recipe.name}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">
+                    {recipe.name}
+                  </CardTitle>
                   <div className="flex items-center gap-4 text-sm text-pink-700">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
@@ -318,7 +344,9 @@ export default function RecipesPage() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="mb-4">
-                    <h4 className="font-bold text-pink-600 mb-2">Ingredients:</h4>
+                    <h4 className="font-bold text-pink-600 mb-2">
+                      Ingredients:
+                    </h4>
                     <ul className="text-sm text-pink-700 space-y-1">
                       {recipe.ingredients.map((ingredient, i) => (
                         <li key={i} className="flex items-start gap-2">
@@ -329,7 +357,9 @@ export default function RecipesPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-pink-600 mb-2">Instructions:</h4>
+                    <h4 className="font-bold text-pink-600 mb-2">
+                      Instructions:
+                    </h4>
                     <ol className="text-sm text-pink-700 space-y-2">
                       {recipe.instructions.map((step, i) => (
                         <li key={i} className="flex gap-2">
@@ -357,19 +387,26 @@ export default function RecipesPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
               {/* CHANGE CALL-TO-ACTION TITLE HERE */}
-              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">love these recipes?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
+                love these recipes?
+              </h2>
               <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
             </div>
             {/* CHANGE CALL-TO-ACTION TEXT HERE */}
             <p className="text-xl text-pink-700/80 mb-8 leading-relaxed">
-              share your baking creations with us! we love seeing your sweet masterpieces
+              share your baking creations with us! we love seeing your sweet
+              masterpieces
             </p>
             {/* CHANGE INSTAGRAM LINK AND TEXT HERE */}
             <Button
               className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform hover:scale-105 transition-all"
               asChild
             >
-              <a href="https://instagram.com/sugarbloomsco" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://instagram.com/sugarbloomsco"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 tag @sugarbloomsco
               </a>
             </Button>
@@ -380,7 +417,7 @@ export default function RecipesPage() {
       {/* ========================================
           FUTURE SECTIONS - UNCOMMENT TO ADD
           ======================================== */}
-      
+
       {/* EXAMPLE: Add a new section for tips or featured bakers
       <section className="py-20 px-4 bg-pink-50/30 relative">
         <div className="container mx-auto text-center">
@@ -391,5 +428,5 @@ export default function RecipesPage() {
       </section>
       */}
     </div>
-  )
+  );
 }
