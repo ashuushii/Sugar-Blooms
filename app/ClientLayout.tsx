@@ -150,14 +150,6 @@ export default function ClientLayout({
           {children}
           <footer className="relative py-20 px-4 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-50/30 to-pink-300/60"></div>
-            <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: "url('/bow.png')",
-                backgroundRepeat: "repeat",
-                backgroundSize: "100px",
-              }}
-            />
             <div className="container mx-auto text-center relative z-10">
               <div className="flex items-center justify-center space-x-3 mb-8">
                 <Image
