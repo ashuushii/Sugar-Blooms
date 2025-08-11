@@ -6,6 +6,7 @@ import "./globals.css";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -172,6 +173,7 @@ export default function ClientLayout({
               </p>
             </div>
           </footer>
+          <SpeedInsights />
         </div>
       </body>
     </html>
