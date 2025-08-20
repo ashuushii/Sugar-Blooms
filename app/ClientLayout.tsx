@@ -25,12 +25,9 @@ export default function ClientLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-          sizes="180x180"
-        />
-        <link rel="icon" href="/sugar.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className={inter.className}>
         <BowBackground />
