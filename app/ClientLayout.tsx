@@ -41,11 +41,11 @@ export default function ClientLayout({
               <div className="flex items-center space-x-8">
                 <div className="flex items-center space-x-3">
                   <Image
-                    src="/logo.png"
-                    alt="Sugar Blooms Bakery Logo"
+                    src="/sb-logo.png"
+                    alt="Sugar Blooms SB Logo"
                     width={40}
                     height={40}
-                    className="rounded-full shadow-md w-10 h-10 flex-shrink-0"
+                    className="w-10 h-10 flex-shrink-0"
                   />
                   <h1 className="hidden lg:block text-sm font-bold text-pink-600 font-serif whitespace-nowrap">
                     Sugar Blooms
@@ -88,11 +88,11 @@ export default function ClientLayout({
               <div className="flex items-center justify-center relative">
                 <div className="flex items-center space-x-3">
                   <Image
-                    src="/logo.png"
-                    alt="Sugar Blooms Bakery Logo"
+                    src="/sb-logo.png"
+                    alt="Sugar Blooms SB Logo"
                     width={40}
                     height={40}
-                    className="rounded-full shadow-md"
+                    className=""
                   />
                   <h1 className="text-base font-bold text-pink-600 font-serif whitespace-nowrap">
                     Sugar Blooms
@@ -154,11 +154,11 @@ export default function ClientLayout({
             <div className="container mx-auto text-center relative z-10">
               <div className="flex items-center justify-center space-x-3 mb-8">
                 <Image
-                  src="/logo.png"
-                  alt="Sugar Blooms Bakery Logo"
+                  src="/sb-logo.png"
+                  alt="Sugar Blooms SB Logo"
                   width={80}
                   height={80}
-                  className="rounded-full bg-white shadow-lg"
+                  className=""
                 />
                 <h4 className="text-3xl font-bold font-serif text-pink-700">
                   Sugar Blooms
