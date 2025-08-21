@@ -38,7 +38,7 @@ export default function Component() {
               "@context": "https://schema.org",
               "@type": "Bakery",
               name: "Sugar Blooms",
-              image: "https://sugarblooms.co.uk/logo.png",
+              image: "https://sugarblooms.co.uk/sb-logo.png",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "London",
