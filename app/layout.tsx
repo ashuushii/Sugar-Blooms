@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/sb-logo.png",
         width: 512,
         height: 512,
         alt: "Sugar Blooms Bakery Logo",
@@ -50,12 +50,12 @@ export const metadata: Metadata = {
       "Sugar Blooms | Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
     description:
       "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic.",
-    images: ["/logo.png"],
+    images: ["/sb-logo.png"],
   },
   icons: {
     icon: [
-      { url: "/logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/sb-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/sb-logo.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
