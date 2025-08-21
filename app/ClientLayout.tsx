@@ -44,9 +44,6 @@ export default function ClientLayout({
                     height={40}
                     className="w-10 h-10 flex-shrink-0"
                   />
-                  <h1 className="hidden lg:block text-sm font-bold text-pink-600 font-serif whitespace-nowrap">
-                    Sugar Blooms
-                  </h1>
                 </div>
 
                 <div className="flex items-center space-x-6">
@@ -91,9 +88,6 @@ export default function ClientLayout({
                     height={40}
                     className=""
                   />
-                  <h1 className="text-base font-bold text-pink-600 font-serif whitespace-nowrap">
-                    Sugar Blooms
-                  </h1>
                 </div>
 
                 <button
