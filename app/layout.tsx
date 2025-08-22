@@ -3,12 +3,15 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
-import { businessSchema, websiteSchema } from './schema';
+import { businessSchema, websiteSchema } from "./schema";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sugarblooms.co.uk"),
+  verification: {
+    google: "google-site-verification",
+  },
   title:
     "Sugar Blooms | Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
   description:
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
     "special occasion cupcakes",
     "best cupcakes London",
     "North London bakery",
-    "custom cake orders London"
+    "custom cake orders London",
   ],
   alternates: {
     canonical: "https://sugarblooms.co.uk",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
         width: 512,
         height: 512,
         alt: "Sugar Blooms Logo",
-      }
+      },
     ],
   },
   twitter: {
@@ -67,8 +70,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/sugarblooms.png", type: "image/png", sizes: "48x48" },
+      { url: "/sugarblooms.png", type: "image/png", sizes: "96x96" },
       { url: "/favicon.ico", type: "image/x-icon" },
     ],
+    shortcut: [{ url: "/sugarblooms.png" }],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
