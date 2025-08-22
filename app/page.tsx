@@ -171,7 +171,7 @@ export default function Component() {
       <header>
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 relative pt-48 overflow-hidden"
+          className="min-h-screen flex items-center justify-center px-4 relative pt-40 md:pt-48 overflow-hidden"
         >
           <div className="container mx-auto text-center relative z-10">
             <div className="max-w-6xl mx-auto">
