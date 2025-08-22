@@ -9,13 +9,13 @@ import { Badge } from "@/components/ui/badge";
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
-      title: "sweet selection:",
+      title: "Sweet Selection:",
       // description: "our most popular cupcakes, loved by all",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
           description:
-            "vanilla cupcake with smooth buttercream and handcrafted pink fondant bow",
+            "Vanilla cupcake with smooth buttercream and handcrafted pink fondant bow",
           price: "£12 for 4 | £15 for 6 | £24 for 12",
           image: "/cupcakes-bows.jpeg",
           popular: true,
@@ -24,7 +24,7 @@ export default function CupcakesPage() {
         {
           name: "Rosé Swirl",
           description:
-            "delicate vanilla cupcake with rose pink buttercream swirls and pearl decorations",
+            "Delicate vanilla cupcake with rose pink buttercream swirls and pearl decorations",
           price: "£12 for 4 | £15 for 6 | £24 for 12",
           image: "/cupcakes-roses.jpeg",
           loved: true,
@@ -33,7 +33,7 @@ export default function CupcakesPage() {
         {
           name: "Custom Design",
           description:
-            "vanilla basecupcake with your custom buttercream design & decorations",
+            "Vanilla base cupcake with your custom buttercream design & decorations",
           price: "£16 for 4 | £21 for 6 | £36 for 12",
           image: "/vanillacupcakes.jpeg",
           flavors: ["chocolate", "vanilla", "strawberry"],
@@ -43,29 +43,33 @@ export default function CupcakesPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
-            <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
-              our cupcakes
-            </h1>
-            <Sparkles className="w-8 h-8 text-pink-400 animate-pulse" />
-          </div>
-          <p className="text-xl text-pink-700 max-w-3xl mx-auto leading-relaxed">
-            each cupcake is handcrafted with love, premium ingredients, and a
-            signature feminine touch pretty pink designs that are as elegant as
-            they are delicious.
-          </p>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
-            <span className="text-pink-500 text-sm font-medium">
-              made fresh daily in our home kitchen
-            </span>
-            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+    <div className="min-h-screen pt-32 pb-20">
+      <section className="py-16 px-4 relative">
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
+              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+                Our Cupcakes
+              </h1>
+              <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
+            </div>
+            <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
+              Each cupcake is handcrafted with love, premium ingredients, and a
+              signature feminine touch. Pretty pink designs that are as elegant as
+              they are delicious.
+            </p>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              <span className="text-pink-500 text-sm font-medium">
+                Made Fresh Daily in Our Home Kitchen
+              </span>
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+            </div>
           </div>
         </div>
+      </section>
+      <div className="container mx-auto px-4">
 
         {cupcakeCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="mb-20">
@@ -86,7 +90,7 @@ export default function CupcakesPage() {
                     <div className="absolute bottom-64 left-4 z-10">
                       <Badge className="bg-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                         <Star className="w-3 h-3 mr-1 fill-white" />
-                        popular
+                        Popular
                       </Badge>
                     </div>
                   )}
@@ -94,7 +98,7 @@ export default function CupcakesPage() {
                     <div className="absolute bottom-64 left-4 z-10">
                       <Badge className="bg-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                         <Heart className="w-3 h-3 mr-1 fill-white" />
-                        loved
+                        Loved
                       </Badge>
                     </div>
                   )}
@@ -142,7 +146,7 @@ export default function CupcakesPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          order now
+                          Order Now
                         </a>
                       </Button>
                     </div>
@@ -157,12 +161,12 @@ export default function CupcakesPage() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
             <h3 className="text-2xl font-bold text-pink-600 font-serif">
-              custom orders
+              Custom Orders
             </h3>
             <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
           </div>
           <p className="text-pink-700 mb-6 leading-relaxed">
-            have something special in mind? we love creating bespoke cupcakes
+            Have something special in mind? We love creating bespoke cupcakes
             for your celebrations!
           </p>
           <Button
@@ -174,7 +178,7 @@ export default function CupcakesPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              enquire now
+              Enquire Now
             </a>
           </Button>
         </div>

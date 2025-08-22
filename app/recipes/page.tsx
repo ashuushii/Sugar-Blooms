@@ -179,19 +179,19 @@ export default function RecipesPage() {
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
               {/* CHANGE PAGE TITLE HERE */}
               <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
-                sweet recipes
+                Sweet Recipes
               </h1>
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
             {/* CHANGE PAGE SUBTITLE HERE */}
             <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
-              bake with love and create your own sweet magic at home
+              Bake with Love and Create Your Own Sweet Magic at Home
             </p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               {/* CHANGE TAGLINE HERE */}
               <span className="text-pink-500 text-sm font-medium">
-                cupcakes & frosting
+                Cupcakes & Frosting
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
@@ -207,11 +207,11 @@ export default function RecipesPage() {
           <div className="text-center mb-16">
             {/* CHANGE SECTION TITLE HERE */}
             <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
-              cupcake recipes
+              Cupcake Recipes
             </h2>
             {/* CHANGE SECTION DESCRIPTION HERE */}
             <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
-              perfect little treats for any celebration
+              Perfect Little Treats for Any Celebration
             </p>
           </div>
 
@@ -302,10 +302,10 @@ export default function RecipesPage() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
-              frosting recipes
+              Frosting Recipes
             </h2>
             <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
-              creamy toppings for your cupcakes
+              Creamy Toppings for Your Cupcakes
             </p>
           </div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -388,13 +388,13 @@ export default function RecipesPage() {
               <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
               {/* CHANGE CALL-TO-ACTION TITLE HERE */}
               <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
-                love these recipes?
+                Love These Recipes?
               </h2>
               <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
             </div>
             {/* CHANGE CALL-TO-ACTION TEXT HERE */}
             <p className="text-xl text-pink-700/80 mb-8 leading-relaxed">
-              share your baking creations with us! we love seeing your sweet
+              Share your baking creations with us! We love seeing your sweet
               masterpieces
             </p>
             {/* CHANGE INSTAGRAM LINK AND TEXT HERE */}
@@ -407,7 +407,7 @@ export default function RecipesPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                tag @sugarbloomsco
+                Tag @sugarbloomsco
               </a>
             </Button>
           </div>

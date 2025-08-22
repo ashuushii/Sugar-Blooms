@@ -5,6 +5,13 @@ import Head from "next/head";
 import { Star, MapPin, Heart, Mail, Instagram, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import PostcodeDistanceChecker from "@/components/postcode-distance-checker";
@@ -62,16 +69,6 @@ export default function Component() {
                 className="transform transition-all duration-700 ease-out"
                 style={{ transform: `translateY(${scrollY * -0.3}px)` }}
               >
-                <div className="mb-6">
-                  <span className="inline-block text-sm text-pink-500 font-medium tracking-wider uppercase mb-4 opacity-80">
-                    cupcake bakery
-                  </span>
-                </div>
-
-                <h1 className="text-7xl md:text-9xl font-light text-pink-600 mb-4 font-serif leading-none tracking-tight">
-                  Sugar Blooms
-                </h1>
-
                 <div className="flex items-center justify-center gap-4 mb-8">
                   <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                   <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
@@ -79,8 +76,8 @@ export default function Component() {
                 </div>
 
                 <p className="text-xl md:text-xl text-pink-700/80 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-                  delicate cupcakes crafted with intention, decorated with
-                  dreams
+                  Delicate cupcakes crafted with intention, decorated with
+                  dreams.
                 </p>
                 {/* Opening sign for September 1st, 2025 with hover text change */}
                 <div
@@ -108,7 +105,7 @@ export default function Component() {
                   className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-0"
                   asChild
                 >
-                  <a href="/contact">how to order</a>
+                  <a href="/contact">How to Order</a>
                 </Button>
               </div>
 
@@ -123,14 +120,26 @@ export default function Component() {
                 }}
               >
                 <div className="relative inline-block">
-                  <Image
-                    src="/cupcakes-box.jpeg"
-                    alt="Handcrafted Sugar Blooms cupcakes in a box, London bakery"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl"
-                  />
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/5 to-transparent" />
+                  <Carousel className="w-[600px] rounded-2xl shadow-2xl">
+                    <CarouselContent>
+                      {[1, 2, 3].map((index) => (
+                        <CarouselItem key={index}>
+                          <div className="relative aspect-square w-full">
+                            <Image
+                              src={`/carousel${index}.png`}
+                              alt={`Sugar Blooms cupcakes showcase ${index}`}
+                              fill
+                              priority={index === 1}
+                              className="rounded-2xl object-cover"
+                            />
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/5 to-transparent" />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="bg-white/80 backdrop-blur-sm border-pink-200" />
+                    <CarouselNext className="bg-white/80 backdrop-blur-sm border-pink-200" />
+                  </Carousel>
                 </div>
 
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg opacity-90">
@@ -149,76 +158,77 @@ export default function Component() {
         </section>
       </header>
 
-      <main>
-        {/* About Section */}
-        <section
-          id="about"
-          className="py-20 px-4 relative"
-          aria-labelledby="about-title"
-        >
-          <div className="container mx-auto">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-                <h1
-                  id="about-title"
-                  className="text-4xl md:text-5xl font-bold text-pink-600 font-serif"
-                >
-                  About Sugar Blooms
-                </h1>
-                <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-                <div className="relative">
-                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-pink-300 rounded-full flex items-center justify-center shadow-xl animate-bounce z-10">
-                    <Heart className="w-8 h-8 text-pink-600 fill-pink-600" />
-                  </div>
-                  <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center shadow-xl animate-pulse z-10">
-                    <Sparkles className="w-6 h-6 text-pink-600" />
-                  </div>
-                  <Image
-                    src="/baking.png"
-                    alt="Anime style illustration of a baker decorating cupcakes, Sugar Blooms London"
-                    width={400}
-                    height={400}
-                    className="rounded-3xl shadow-2xl border-4 border-white mx-auto relative z-0"
-                  />
+      {/* Customer Reviews Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-transparent to-pink-50/50">
+        <div className="container mx-auto">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="mb-12">
+              <h2 className="text-4xl font-bold text-pink-600 font-serif">Customer Reviews</h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
                 </div>
-                <div className="text-left space-y-6">
-                  <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
-                    <h4 className="text-2xl font-bold text-pink-600 mb-4 font-serif">
-                      our story
-                    </h4>
-                    <p className="text-lg text-pink-700 leading-relaxed">
-                      what began as a simple hobby in my cozy london kitchen
-                      quickly became a passion for creating joy, one cupcake at
-                      a time. every swirl of buttercream and delicate bow is
-                      placed with intention and love.
-                    </p>
-                  </div>
-                  <div className="bg-rose-50 rounded-2xl p-6 border-2 border-rose-200">
-                    <h4 className="text-2xl font-bold text-rose-600 mb-4 font-serif">
-                      our mission
-                    </h4>
-                    <p className="text-lg text-rose-700 leading-relaxed">
-                      to turn everyday moments into celebrations and make your
-                      day a little brighter, a lot sweeter. every order is
-                      crafted start to finish by one pair of hands.
-                    </p>
-                  </div>
-                  <div className="flex items-center space-x-4 justify-center">
-                    <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
-                    <span className="text-pink-600 font-medium">
-                      made with love
-                    </span>
-                    <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
-                  </div>
+                <p className="text-pink-700 mb-6 italic">
+                  "Absolutely loved these cupcakes! Super fresh, fluffy, and full of flavor. You can tell a lot of care went into baking them. Definitely coming back for more."
+                </p>
+                <p className="text-pink-600 font-medium">- josh h.</p>
+              </Card>
+
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
                 </div>
-              </div>
+                <p className="text-pink-700 mb-6 italic">
+                  "Thanks for the cakes! 10/10, I will definitely order again."
+                </p>
+                <p className="text-pink-600 font-medium">- Shahan P.</p>
+              </Card>
+
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-pink-700 mb-6 italic">
+                  "The cupcakes had the cutest ribbon designs, and the icing was just the right kind of sweet. The cake stayed super soft even after hours! I'm definitely ordering more in the future!"
+                </p>
+                <p className="text-pink-600 font-medium">- Elvina L.</p>
+              </Card>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-pink-700 mb-6 italic">
+                  "I treated myself to these gorgeous cupcakes and they exceeded all expectations! The rose flavoring is so unique and delicate. Pure perfection!"
+                </p>
+                <p className="text-pink-600 font-medium">- Charlotte W.</p>
+              </Card>
+            </div>
+
+            <div className="mt-12 flex items-center justify-center space-x-2">
+              <Sparkles className="w-5 h-5 text-pink-400" />
+              <span className="text-pink-600 font-medium italic">
+                Join Our Happy Customers
+              </span>
+              <Sparkles className="w-5 h-5 text-pink-400" />
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
     </main>
   );
 }

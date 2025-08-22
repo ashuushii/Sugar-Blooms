@@ -15,37 +15,41 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <MessageCircle className="w-8 h-8 text-pink-400 animate-pulse" />
-            <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
-              let's get sweet
-            </h1>
-            <MessageCircle className="w-8 h-8 text-pink-400 animate-pulse" />
-          </div>
-          <p className="text-xl text-pink-700 max-w-3xl mx-auto leading-relaxed">
-            ready to add some sweetness to your day? we'd love to hear from you!
-          </p>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
-            <span className="text-pink-500 text-sm font-medium">
-              orders require 24-48 hours notice
-            </span>
-            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+    <div className="min-h-screen pt-32 pb-20">
+      <section className="py-16 px-4 relative">
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <MessageCircle className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
+              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+                Let's Get Sweet
+              </h1>
+              <MessageCircle className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
+            </div>
+            <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
+              Ready to add some sweetness to your day? We'd love to hear from you!
+            </p>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              <span className="text-pink-500 text-sm font-medium">
+                Orders Require 24-48 Hours Notice
+              </span>
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+            </div>
           </div>
         </div>
+      </section>
+      <div className="container mx-auto max-w-6xl px-4">
 
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <Card className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl overflow-hidden">
             <CardContent className="p-0">
               <div className="bg-gradient-to-r from-pink-400 to-rose-400 p-8 text-white text-center">
                 <h2 className="text-3xl font-bold font-serif mb-2">
-                  get in touch
+                  Get in Touch
                 </h2>
                 <p className="text-pink-100">
-                  we're here to make your day sweeter
+                  We're here to make your day sweeter
                 </p>
               </div>
 
@@ -55,7 +59,7 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-pink-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-pink-600">email us</h3>
+                    <h3 className="font-bold text-pink-600">Email Us</h3>
                     <p className="text-pink-700">contact@sugarblooms.co.uk</p>
                   </div>
                 </div>
@@ -65,9 +69,9 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-pink-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-pink-600">location</h3>
+                    <h3 className="font-bold text-pink-600">Location</h3>
                     <p className="text-pink-700">
-                      london, uk (collection only)
+                      London, UK (Collection Only)
                     </p>
                   </div>
                 </div>
@@ -77,7 +81,7 @@ export default function ContactPage() {
                     <Clock className="w-6 h-6 text-pink-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-pink-600">order notice</h3>
+                    <h3 className="font-bold text-pink-600">Order Notice</h3>
                     <p className="text-pink-700">
                       24-48 hours advance notice required
                     </p>
@@ -86,7 +90,7 @@ export default function ContactPage() {
 
                 <div className="pt-4">
                   <h3 className="text-xl font-bold text-pink-600 mb-4 font-serif text-center">
-                    follow our socials
+                    Follow Our Socials
                   </h3>
                   <div className="flex justify-center space-x-4">
                     <Button
@@ -155,11 +159,11 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3 mb-6">
                   <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
                   <h2 className="text-2xl font-bold text-pink-600 font-serif">
-                    ready to order?
+                    Ready to Order?
                   </h2>
                 </div>
                 <p className="text-pink-700 mb-6 leading-relaxed">
-                  message me on whatsapp with your dream order! tell us about
+                  Message me on WhatsApp with your dream order! Tell us about
                   your celebration, how many cupcakes you need, and any special
                   requests.
                 </p>
@@ -172,7 +176,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    order / enquire now
+                    Order / Enquire Now
                   </a>
                 </Button>
               </CardContent>
@@ -183,30 +187,30 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3 mb-6">
                   <Sparkles className="w-6 h-6 text-pink-500" />
                   <h2 className="text-2xl font-bold text-pink-600 font-serif">
-                    order details
+                    Order Details
                   </h2>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
                     <span className="text-pink-700">
-                      minimum order: 4 cupcakes
+                      Minimum Order: 4 Cupcakes
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
-                    <span className="text-pink-700">collection only</span>
+                    <span className="text-pink-700">                      Collection Only</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
                     <span className="text-pink-700">
-                      custom designs welcome for special occasions
+                      Custom Designs Welcome for Special Occasions
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
                     <span className="text-pink-700">
-                      not recommended if you have allergies
+                      Not Recommended if You Have Allergies
                     </span>
                   </div>
                 </div>
@@ -219,18 +223,18 @@ export default function ContactPage() {
           <div className="flex items-center justify-center gap-3 mb-6">
             <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             <h2 className="text-4xl font-bold text-pink-600 font-serif">
-              we can't wait to hear from you
+              We Can't Wait to Hear from You
             </h2>
             <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
           </div>
           <p className="text-xl text-pink-700 max-w-2xl mx-auto leading-relaxed mb-8">
-            whether it's for a birthday party, wedding, baby shower, or just
+            Whether it's for a birthday party, wedding, baby shower, or just
             because you deserve something sweet, we're here to make it magical.
           </p>
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="w-5 h-5 text-pink-400" />
             <span className="text-pink-600 font-medium italic">
-              whisked with joy, baked with love
+              Whisked with Joy, Baked with Love
             </span>
             <Sparkles className="w-5 h-5 text-pink-400" />
           </div>
