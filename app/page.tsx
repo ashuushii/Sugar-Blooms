@@ -213,7 +213,7 @@ export default function Component() {
                       onFocus={() => setShowPopup(true)}
                       onBlur={() => setShowPopup(false)}
                     >
-                      <span className="text-lg font-bold text-yellow-700 tracking-wide block text-center whitespace-normal">
+                      <span className="font-bold text-yellow-700 tracking-wide block text-center whitespace-normal">
                         {showPopup
                           ? "🎉 20% off for your first order!"
                           : "Grand Opening: September 1st, 2025!"}
@@ -299,10 +299,10 @@ export default function Component() {
                         <div className="bg-pink-50 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                           {feature.icon}
                         </div>
-                        <h3 className="text-base lg:text-xl font-bold text-pink-600 mb-2 lg:mb-3 font-serif">
+                        <h3 className="font-bold text-pink-600 mb-2 lg:mb-3 font-serif">
                           {feature.title}
                         </h3>
-                        <p className="text-sm lg:text-base text-pink-700 leading-relaxed">
+                        <p className="text-pink-700 leading-relaxed">
                           {feature.description}
                         </p>
                       </CardContent>
@@ -317,7 +317,7 @@ export default function Component() {
                     <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                   </div>
 
-                  <p className="text-xl md:text-xl text-pink-700/80 mb-6 font-light leading-relaxed max-w-2xl mx-auto text-center">
+                  <p className="text-pink-700/80 mb-6 font-light leading-relaxed max-w-2xl mx-auto text-center">
                     Delicate cupcakes crafted with intention, decorated with
                     dreams.
                   </p>
@@ -342,18 +342,12 @@ export default function Component() {
       <section className="py-12 px-4 bg-gradient-to-b from-transparent to-pink-50/50">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-pink-600 mb-4 font-serif">
+            <h2 className="text-4xl font-bold text-pink-600 mb-8 font-serif">
               Customer Reviews
             </h2>
-            <p className="text-xl text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
-              See What Our Happy Customers Have to Say
-            </p>
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-              <span className="text-pink-500 text-sm font-medium">
-                Sweet Reviews
-              </span>
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1" />
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1" />
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -426,12 +420,30 @@ export default function Component() {
               </Card>
             </div>
 
-            <div className="mt-12 flex items-center justify-center space-x-2">
-              <Sparkles className="w-5 h-5 text-pink-400" />
-              <span className="text-pink-600 font-medium italic">
-                Join Our Happy Customers
-              </span>
-              <Sparkles className="w-5 h-5 text-pink-400" />
+            <div className="mt-12 flex items-center justify-center">
+              <a
+                href="https://g.page/r/CRNbbUdMowAzEAI/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:text-pink-700 font-medium transition-colors hover:underline underline-offset-4 flex items-center gap-2"
+              >
+                Leave us a review on Google
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="cursor-pointer"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>

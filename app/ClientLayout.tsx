@@ -98,35 +98,35 @@ export default function ClientLayout({
                   <div className="py-2 flex flex-col items-center">
                     <a
                       href="/"
-                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-base"
+                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Home
                     </a>
                     <a
                       href="/cupcakes"
-                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-base"
+                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Cupcakes
                     </a>
                     <a
                       href="/about"
-                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-base"
+                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       About
                     </a>
                     <a
                       href="/recipes"
-                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-base"
+                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Recipes
                     </a>
                     <a
                       href="/contact"
-                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors text-base"
+                      className="w-full text-center px-6 py-3 text-pink-600 hover:text-pink-800 hover:bg-pink-50 font-medium transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Contact
@@ -185,7 +185,7 @@ export default function ClientLayout({
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {/* Left Section */}
                 <div className="flex flex-col">
-                  <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">Sugar Blooms</h3>
+                  <h3 className="text-2xl font-serif font-bold text-pink-600 mb-4">Sugar Blooms</h3>
                   <p className="text-pink-700 text-lg mb-4">
                     See our socials below, we'd love if you could leave a review!
                   </p>
@@ -231,7 +231,7 @@ export default function ClientLayout({
 
                 {/* Right Section - Quick Links */}
                 <div>
-                  <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">Quick Links</h3>
+                  <h3 className="text-2xl font-serif font-bold text-pink-600 mb-4">Quick Links</h3>
                   <nav className="flex flex-col space-y-3">
                     <a href="/" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Home</a>
                     <a href="/cupcakes" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Cupcakes</a>
@@ -243,7 +243,7 @@ export default function ClientLayout({
               </div>
 
               {/* Newsletter Section */}
-              <div className="border-t border-pink-200 pt-8 pb-8">
+              {/* <div className="border-t border-pink-200 pt-8 pb-8">
                 <div>
                   <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">
                     Subscribe to Our Newsletter
@@ -269,14 +269,14 @@ export default function ClientLayout({
                     </form>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Bottom Section - Existing Content */}
               <div className="border-t border-pink-200 pt-8 text-center">
-                <p className="text-pink-600 mb-4 text-xl font-medium">
+                <p className="text-pink-600 mb-4 text-lg font-medium">
                   Made with Love and Lots of Sugar
                 </p>
-                <p className="text-pink-700 text-base">
+                <p className="text-pink-700 text-lg">
                   © 2025 Sugar Blooms Co.
                 </p>
               </div>
