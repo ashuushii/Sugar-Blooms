@@ -5,7 +5,7 @@ export const businessSchema = {
   "name": "Sugar Blooms",
   "image": {
     "@type": "ImageObject",
-    "url": "https://sugarblooms.co.uk/sb-logo.png",
+    "url": "https://sugarblooms.co.uk/sugarblooms.png",
     "width": "512",
     "height": "512"
   },
@@ -82,7 +82,7 @@ export const websiteSchema = {
     "name": "Sugar Blooms",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://sugarblooms.co.uk/sb-logo.png"
+      "url": "https://sugarblooms.co.uk/sugarblooms.png"
     }
   }
 };

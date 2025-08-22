@@ -72,7 +72,7 @@ export default function ClientLayout({
                 <div className="flex items-center justify-center flex-1">
                   <a href="/" className="hover:opacity-80 transition-opacity">
                     <Image
-                      src="/sugarblooms.png"
+                      src="/sugarbloomsbakery.png"
                       alt="Sugar Blooms Logo"
                       width={400}
                       height={400}
