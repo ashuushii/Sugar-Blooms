@@ -11,7 +11,9 @@ import PostcodeDistanceChecker from "@/components/postcode-distance-checker";
 function MobileImageSlider() {
   const [currentPair, setCurrentPair] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const totalPairs = Math.ceil(3 / 2);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const totalImages = 3; // Total number of images
+  const totalPairs = totalImages;
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -29,14 +31,21 @@ function MobileImageSlider() {
   }, []);
 
   useEffect(() => {
-    // Only run auto-switching if mobile
+    // Only run auto-switching if mobile and component is mounted
+    let mounted = true;
+    
     if (!isMobile) return;
 
     const timer = setInterval(() => {
-      setCurrentPair((prev) => (prev + 1) % totalPairs);
-    }, 3000);
+      if (mounted) {
+        setCurrentPair((prev) => (prev + 1) % totalPairs);
+      }
+    }, 5000);
 
-    return () => clearInterval(timer);
+    return () => {
+      mounted = false;
+      clearInterval(timer);
+    };
   }, [isMobile, totalPairs]);
 
   const handleNext = () => {
@@ -117,12 +126,17 @@ function MobileImageSlider() {
 
       {/* Mobile Slideshow */}
       <div className="md:hidden relative max-w-md mx-auto">
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-pink-50 rounded-2xl flex items-center justify-center">
+            <div className="w-8 h-8 border-4 border-pink-400 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
         <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl">
           {[1, 2, 3].map((index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                index - 1 === currentPair ? "opacity-100" : "opacity-0"
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                currentPair === index - 1 ? "opacity-100" : "opacity-0"
               }`}
             >
               <Image
@@ -130,7 +144,9 @@ function MobileImageSlider() {
                 alt={`Sugar Blooms cupcakes showcase ${index}`}
                 fill
                 priority={index === 1}
-                className="object-cover"
+                loading={index === 1 ? "eager" : "lazy"}
+                onLoad={() => index === 1 && setIsLoaded(true)}
+                className={`object-cover transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
             </div>
           ))}

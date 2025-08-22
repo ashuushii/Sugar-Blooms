@@ -79,8 +79,34 @@ export default function ClientLayout({
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <style>
+          {`
+            * {
+              -webkit-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              -webkit-touch-callout: none;
+            }
+            img {
+              -webkit-user-drag: none;
+              -khtml-user-drag: none;
+              -moz-user-drag: none;
+              -o-user-drag: none;
+              user-drag: none;
+              pointer-events: none;
+            }
+            a, button, input, .clickable {
+              user-select: none !important;
+              -webkit-user-select: none !important;
+              -webkit-touch-callout: none !important;
+              cursor: pointer !important;
+            }
+          `}
+        </style>
       </head>
-      <body className={inter.className}>
+      <body 
+        className={inter.className}
+        onContextMenu={(e) => e.preventDefault()}>
         <BowBackground />
         <div className="min-h-screen relative z-10">
           {/* Navigation */}
