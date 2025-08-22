@@ -242,6 +242,35 @@ export default function ClientLayout({
                 </div>
               </div>
 
+              {/* Newsletter Section */}
+              <div className="border-t border-pink-200 pt-8 pb-8">
+                <div>
+                  <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">
+                    Subscribe to Our Newsletter
+                  </h3>
+                  <p className="text-pink-700 text-lg mb-4">
+                    Stay updated with our weekly discount codes, seasonal specials, and exclusive offers.
+                  </p>
+                  <div className="space-y-4">
+                    <form>
+                      <div className="flex gap-2 max-w-md">
+                        <input
+                          type="email"
+                          placeholder="Enter your email"
+                          className="flex-1 px-4 py-2 rounded-full border-2 border-pink-200 focus:border-pink-400 focus:outline-none text-pink-700 placeholder:text-pink-300"
+                        />
+                        <button
+                          type="submit"
+                          className="bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-medium px-6 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all whitespace-nowrap"
+                        >
+                          Subscribe
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
               {/* Bottom Section - Existing Content */}
               <div className="border-t border-pink-200 pt-8 text-center">
                 <p className="text-pink-600 mb-4 text-xl font-medium">

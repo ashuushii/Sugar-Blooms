@@ -10,7 +10,7 @@ export default function CupcakesPage() {
   const cupcakeCategories = [
     {
       title: "Sweet Selection:",
-      // description: "our most popular cupcakes, loved by all",
+      description: "our most popular cupcakes, loved by all",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
@@ -33,7 +33,7 @@ export default function CupcakesPage() {
         {
           name: "Custom Design",
           description:
-            "Vanilla base cupcake with your custom buttercream design & decorations",
+            "Cupcakes with your custom buttercream design & decorations",
           price: "£16 for 4 | £21 for 6 | £36 for 12",
           image: "/vanillacupcakes.jpeg",
           flavors: ["chocolate", "vanilla", "strawberry"],
@@ -119,7 +119,7 @@ export default function CupcakesPage() {
                         className="w-full h-64 object-cover transition-transform hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-pink-50/80 to-transparent opacity-0 hover:opacity-100 transition-opacity" />
-                      <div className="absolute top-3 right-3 bg-pink-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      <div className="absolute top-3 right-3 bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transition-colors">
                         {cupcake.price}
                       </div>
                     </div>
@@ -136,7 +136,7 @@ export default function CupcakesPage() {
                         {cupcake.flavors.map((flavor, flavorIndex) => (
                           <span
                             key={flavorIndex}
-                            className="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded-full border border-pink-200"
+                            className="text-xs bg-pink-100 text-pink-600 px-3 py-1.5 rounded-full border border-pink-200 font-medium hover:bg-pink-200 transition-colors"
                           >
                             {flavor}
                           </span>
@@ -148,7 +148,7 @@ export default function CupcakesPage() {
                         asChild
                       >
                         <a
-                          href="https://wa.me/447907169798"
+                          href={`https://wa.me/447907169798?text=Hi! I'd like to order ${cupcake.name} cupcakes.`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -188,6 +188,54 @@ export default function CupcakesPage() {
               Enquire Now
             </a>
           </Button>
+        </div>
+
+        {/* Allergies Information Section */}
+        <div className="mt-20 text-center bg-white rounded-3xl p-8 border-2 border-pink-200 shadow-lg">
+          <h3 className="text-2xl font-bold text-pink-600 font-serif mb-4">
+            Allergies Information
+          </h3>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+            <span className="text-pink-500 text-sm font-medium">Important Information</span>
+            <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <p className="text-pink-700 mb-6 leading-relaxed">
+              Our cupcakes are made in a kitchen that handles the following allergens:
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {[
+                "Eggs",
+                "Milk",
+                "Wheat (Gluten)",
+                "Nuts",
+                "Soy",
+                "Food Coloring"
+              ].map((allergen, index) => (
+                <div key={index} className="bg-pink-50/50 p-3 rounded-xl border border-pink-100">
+                  <p className="text-pink-700 font-medium">{allergen}</p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="space-y-4 text-left">
+              <p className="text-pink-700 text-sm leading-relaxed">
+                <span className="font-semibold">⚠️ Cross-contamination:</span> While we take every precaution to prevent cross-contamination, 
+                our products are made in a kitchen that handles these allergens.
+              </p>
+              <p className="text-pink-700 text-sm leading-relaxed">
+                <span className="font-semibold">📝 Special Requirements:</span> Please inform us of any allergies when placing your order. 
+                We'll do our best to accommodate your needs.
+              </p>
+              <p className="text-pink-700 text-sm leading-relaxed">
+                <span className="font-semibold">🔍 Ingredients:</span> A full list of ingredients is available upon request. 
+                Don't hesitate to ask if you have any questions about specific ingredients.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
