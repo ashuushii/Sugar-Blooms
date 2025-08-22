@@ -21,12 +21,12 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <MessageCircle className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+              <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
                 Let's Get Sweet
               </h1>
               <MessageCircle className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
-            <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
+            <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               Ready to add some sweetness to your day? We'd love to hear from
               you!
             </p>

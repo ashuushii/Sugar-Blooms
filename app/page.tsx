@@ -365,7 +365,7 @@ export default function Component() {
                   full of flavor. You can tell a lot of care went into baking
                   them. Definitely coming back for more."
                 </p>
-                <p className="text-pink-600 font-medium">- josh h.</p>
+                <p className="text-pink-600 font-medium">- Josh H.</p>
               </Card>
 
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">

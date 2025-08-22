@@ -174,12 +174,12 @@ export default function RecipesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+              <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
                 Sweet Recipes
               </h1>
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
-            <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
+            <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               Bake with Love and Create Your Own Sweet Magic at Home
             </p>
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -202,17 +202,13 @@ export default function RecipesPage() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             {/* CHANGE SECTION TITLE HERE */}
-            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
               Cupcake Recipes
             </h2>
-            {/* CHANGE SECTION DESCRIPTION HERE */}
-            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
-              Perfect Little Treats for Any Celebration
-            </p>
           </div>
 
           {/* RECIPE CARDS - These automatically generate from the cupcakeRecipes array above */}
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {cupcakeRecipes.map((recipe, index) => (
               <Card
                 key={index}
@@ -297,14 +293,11 @@ export default function RecipesPage() {
       <section className="py-20 px-4 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 font-serif">
+            <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
               Frosting Recipes
             </h2>
-            <p className="text-xl text-pink-700/80 max-w-2xl mx-auto">
-              Creamy Toppings for Your Cupcakes
-            </p>
           </div>
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {frostingRecipes.map((recipe, index) => (
               <Card
                 key={index}

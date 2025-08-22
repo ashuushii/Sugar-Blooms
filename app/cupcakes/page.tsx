@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Star, Heart, Sparkles, } from "lucide-react";
+import { Star, Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -49,12 +49,12 @@ export default function CupcakesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-              <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
+              <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
                 Our Cupcakes
               </h1>
               <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
-            <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
+            <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               Each cupcake is handcrafted with love, premium ingredients, and a
               signature feminine touch. Pretty pink designs that are as elegant
               as they are delicious.
@@ -197,15 +197,18 @@ export default function CupcakesPage() {
           </h3>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-            <span className="text-pink-500 text-sm font-medium">Important Information</span>
+            <span className="text-pink-500 text-sm font-medium">
+              Important Information
+            </span>
             <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
           </div>
-          
+
           <div className="max-w-2xl mx-auto">
             <p className="text-pink-700 mb-6 leading-relaxed">
-              Our cupcakes are made in a kitchen that handles the following allergens:
+              Our cupcakes are made in a kitchen that handles the following
+              allergens:
             </p>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
               {[
                 "Eggs",
@@ -213,26 +216,32 @@ export default function CupcakesPage() {
                 "Wheat (Gluten)",
                 "Nuts",
                 "Soy",
-                "Food Coloring"
+                "Food Coloring",
               ].map((allergen, index) => (
-                <div key={index} className="bg-pink-50/50 p-3 rounded-xl border border-pink-100">
+                <div
+                  key={index}
+                  className="bg-pink-50/50 p-3 rounded-xl border border-pink-100"
+                >
                   <p className="text-pink-700 font-medium">{allergen}</p>
                 </div>
               ))}
             </div>
-            
+
             <div className="space-y-4 text-left">
               <p className="text-pink-700 text-sm leading-relaxed">
-                <span className="font-semibold">⚠️ Cross-contamination:</span> While we take every precaution to prevent cross-contamination, 
+                <span className="font-semibold">⚠️ Cross-contamination:</span>{" "}
+                While we take every precaution to prevent cross-contamination,
                 our products are made in a kitchen that handles these allergens.
               </p>
               <p className="text-pink-700 text-sm leading-relaxed">
-                <span className="font-semibold">📝 Special Requirements:</span> Please inform us of any allergies when placing your order. 
-                We'll do our best to accommodate your needs.
+                <span className="font-semibold">📝 Special Requirements:</span>{" "}
+                Please inform us of any allergies when placing your order. We'll
+                do our best to accommodate your needs.
               </p>
               <p className="text-pink-700 text-sm leading-relaxed">
-                <span className="font-semibold">🔍 Ingredients:</span> A full list of ingredients is available upon request. 
-                Don't hesitate to ask if you have any questions about specific ingredients.
+                <span className="font-semibold">🔍 Ingredients:</span> A full
+                list of ingredients is available upon request. Don't hesitate to
+                ask if you have any questions about specific ingredients.
               </p>
             </div>
           </div>

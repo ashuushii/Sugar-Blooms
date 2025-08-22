@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
@@ -92,14 +92,25 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "menu-appear": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "menu-item-appear": {
+          "0%": { transform: "translateY(-8px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "menu-appear": "menu-appear 0.2s ease-out",
+        "menu-item-appear":
+          "menu-item-appear 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
 
-export default config
+export default config;
