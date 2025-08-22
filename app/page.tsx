@@ -177,20 +177,23 @@ export default function Component() {
             <div className="max-w-6xl mx-auto">
               <div className="mb-12 transform transition-all duration-700 ease-out">
                 {/* Desktop Version - with hover effect */}
-                <div className="hidden md:block">
-                  <div
-                    className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer w-[500px]"
-                    tabIndex={0}
-                    onMouseEnter={() => setShowPopup(true)}
-                    onMouseLeave={() => setShowPopup(false)}
-                    onFocus={() => setShowPopup(true)}
-                    onBlur={() => setShowPopup(false)}
-                  >
-                    <span className="text-lg font-bold text-yellow-700 tracking-wide inline-block w-full">
-                      {showPopup
-                        ? "🎉 20% off for your first order!"
-                        : "Grand Opening: September 1st, 2025!"}
-                    </span>
+                <div className="hidden md:block relative w-full">
+                  <div className="flex justify-center">
+                    <div
+                      className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer"
+                      style={{ maxWidth: 'min(500px, 100%)' }}
+                      tabIndex={0}
+                      onMouseEnter={() => setShowPopup(true)}
+                      onMouseLeave={() => setShowPopup(false)}
+                      onFocus={() => setShowPopup(true)}
+                      onBlur={() => setShowPopup(false)}
+                    >
+                      <span className="text-lg font-bold text-yellow-700 tracking-wide block text-center whitespace-normal">
+                        {showPopup
+                          ? "🎉 20% off for your first order!"
+                          : "Grand Opening: September 1st, 2025!"}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 {/* Mobile Version - stacked text in same box */}
