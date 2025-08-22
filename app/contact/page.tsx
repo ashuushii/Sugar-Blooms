@@ -27,12 +27,14 @@ export default function ContactPage() {
               <MessageCircle className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
             <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
-              Ready to add some sweetness to your day? We'd love to hear from you!
+              Ready to add some sweetness to your day? We'd love to hear from
+              you!
             </p>
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4"></div>
+            <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
-                Orders Require 24-48 Hours Notice
+                Orders require 24-48 hours notice
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
@@ -40,7 +42,6 @@ export default function ContactPage() {
         </div>
       </section>
       <div className="container mx-auto max-w-6xl px-4">
-
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <Card className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl overflow-hidden">
             <CardContent className="p-0">
@@ -199,7 +200,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
-                    <span className="text-pink-700">                      Collection Only</span>
+                    <span className="text-pink-700"> Collection Only</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />

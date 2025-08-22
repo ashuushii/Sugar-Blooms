@@ -169,29 +169,25 @@ export default function RecipesPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
-      {/* ========================================
-          PAGE HEADER SECTION
-          ======================================== */}
       <section className="py-16 px-4 relative">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
-              {/* CHANGE PAGE TITLE HERE */}
               <h1 className="text-5xl md:text-6xl font-bold text-pink-600 font-serif">
                 Sweet Recipes
               </h1>
               <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
-            {/* CHANGE PAGE SUBTITLE HERE */}
             <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
               Bake with Love and Create Your Own Sweet Magic at Home
             </p>
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-4">
+            </div>
+            <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-              {/* CHANGE TAGLINE HERE */}
               <span className="text-pink-500 text-sm font-medium">
-                Cupcakes & Frosting
+                Cupcakes & Frosting Recipes
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
@@ -202,7 +198,7 @@ export default function RecipesPage() {
       {/* ========================================
       CUPCAKE RECIPES SECTION
       ======================================== */}
-      <section className="py-20 px-4 relative">
+      <section className="py-8 px-4 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             {/* CHANGE SECTION TITLE HERE */}

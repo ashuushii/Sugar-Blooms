@@ -18,10 +18,12 @@ export default function AboutPage() {
             <p className="text-xl md:text-2xl text-pink-700 mb-8 font-light leading-relaxed">
               Where Dreams Meet Frosting and Every Bite Tells a Story
             </p>
+            <div className="flex items-center justify-center gap-4 mb-4">
+            </div>
             <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
-                Made Fresh Daily in Our Home Kitchen
+                Made fresh daily in our home kitchen
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>

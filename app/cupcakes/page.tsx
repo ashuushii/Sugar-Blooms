@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Star, Heart, Sparkles, Cherry } from "lucide-react";
+import { Star, Heart, Sparkles, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,8 +56,8 @@ export default function CupcakesPage() {
             </div>
             <p className="text-xl md:text-2xl text-pink-700/80 mb-8 font-light leading-relaxed">
               Each cupcake is handcrafted with love, premium ingredients, and a
-              signature feminine touch. Pretty pink designs that are as elegant as
-              they are delicious.
+              signature feminine touch. Pretty pink designs that are as elegant
+              as they are delicious.
             </p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
@@ -70,14 +70,15 @@ export default function CupcakesPage() {
         </div>
       </section>
       <div className="container mx-auto px-4">
-
         {cupcakeCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-pink-600 font-serif mb-4">
                 {category.title}
               </h2>
-              <p className="text-pink-500 italic mb-4">{category.description}</p>
+              <p className="text-pink-500 italic mb-4">
+                {category.description}
+              </p>
               <div className="flex items-center justify-center gap-4">
                 <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                 <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
