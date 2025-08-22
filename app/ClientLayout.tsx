@@ -4,7 +4,7 @@ import type React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X, Instagram, MessageCircle } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState, useEffect } from "react";
@@ -80,7 +80,16 @@ export default function ClientLayout({
                     />
                   </a>
                 </div>
-                <div className="w-10" /> {/* Spacer */}
+                <div className="flex items-center justify-center">
+                  <a
+                    href="https://wa.me/447907169798"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="md:hidden p-2 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
 
               {/* Dropdown Menu */}
