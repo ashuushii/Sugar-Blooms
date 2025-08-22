@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Menu, X, Instagram } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +17,31 @@ export default function ClientLayout({
   children: React.ReactNode;
 }>) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and not at the top
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
     <html lang="en">
@@ -33,7 +54,9 @@ export default function ClientLayout({
         <BowBackground />
         <div className="min-h-screen relative z-10">
           {/* Navigation */}
-          <header className="fixed top-8 left-6 right-6 z-50">
+          <header className={`fixed left-6 right-6 z-50 transition-all duration-300 ${
+              isVisible ? 'top-8 opacity-100' : '-top-24 opacity-0'
+            }`}>
             <nav className="bg-white/90 backdrop-blur-md border-2 border-pink-200 rounded-full px-10 py-1 shadow-2xl relative max-w-7xl mx-auto">
               <div className="flex items-center justify-between relative w-full">
                 <button
@@ -148,13 +171,13 @@ export default function ClientLayout({
             </nav>
           </header>
           {children}
-          <footer className="bg-[#ffabbf] py-12 px-4">
+          <footer className="bg-pink-100/90 backdrop-blur-sm py-12 px-4 border-t-2 border-pink-200">
             <div className="container mx-auto">
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {/* Left Section */}
                 <div className="flex flex-col">
-                  <h3 className="text-3xl font-serif font-bold text-white mb-4">Sugar Blooms</h3>
-                  <p className="text-white/90 text-lg mb-4">
+                  <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">Sugar Blooms</h3>
+                  <p className="text-pink-700 text-lg mb-4">
                     See our socials below, we'd love if you could leave a review!
                   </p>
                   <div className="flex gap-4">
@@ -162,7 +185,7 @@ export default function ClientLayout({
                       href="https://instagram.com/sugarbloomsco"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/90 hover:text-white transition-colors"
+                      className="text-pink-600 hover:text-pink-800 transition-colors"
                     >
                       <Instagram className="w-5 h-5" />
                     </a>
@@ -170,7 +193,7 @@ export default function ClientLayout({
                       href="https://tiktok.com/@sugarbloomsco"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/90 hover:text-white transition-colors"
+                      className="text-pink-600 hover:text-pink-800 transition-colors"
                     >
                       <svg
                         className="w-5 h-5"
@@ -184,7 +207,7 @@ export default function ClientLayout({
                       href="https://www.facebook.com/profile.php?id=61578928634971"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/90 hover:text-white transition-colors"
+                      className="text-pink-600 hover:text-pink-800 transition-colors"
                     >
                       <svg
                         className="w-5 h-5"
@@ -199,23 +222,23 @@ export default function ClientLayout({
 
                 {/* Right Section - Quick Links */}
                 <div>
-                  <h3 className="text-3xl font-serif font-bold text-white mb-4">Quick Links</h3>
+                  <h3 className="text-3xl font-serif font-bold text-pink-600 mb-4">Quick Links</h3>
                   <nav className="flex flex-col space-y-3">
-                    <a href="/" className="text-white/90 hover:text-white transition-colors text-lg">Home</a>
-                    <a href="/cupcakes" className="text-white/90 hover:text-white transition-colors text-lg">Cupcakes</a>
-                    <a href="/about" className="text-white/90 hover:text-white transition-colors text-lg">About</a>
-                    <a href="/recipes" className="text-white/90 hover:text-white transition-colors text-lg">Recipes</a>
-                    <a href="/contact" className="text-white/90 hover:text-white transition-colors text-lg">Contact</a>
+                    <a href="/" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Home</a>
+                    <a href="/cupcakes" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Cupcakes</a>
+                    <a href="/about" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">About</a>
+                    <a href="/recipes" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Recipes</a>
+                    <a href="/contact" className="text-pink-700 hover:text-pink-800 transition-colors text-lg">Contact</a>
                   </nav>
                 </div>
               </div>
 
               {/* Bottom Section - Existing Content */}
-              <div className="border-t border-white/20 pt-8 text-center">
-                <p className="text-white mb-4 text-xl font-medium">
+              <div className="border-t border-pink-200 pt-8 text-center">
+                <p className="text-pink-600 mb-4 text-xl font-medium">
                   Made with Love and Lots of Sugar
                 </p>
-                <p className="text-white/90 text-base">
+                <p className="text-pink-700 text-base">
                   © 2025 Sugar Blooms Co.
                 </p>
               </div>
