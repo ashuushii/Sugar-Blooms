@@ -21,7 +21,7 @@ export default function AboutPage() {
             <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
-                Handcrafted with Love
+                Made Fresh Daily in Our Home Kitchen
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
