@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
+import { businessSchema, websiteSchema } from './schema';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,17 +12,23 @@ export const metadata: Metadata = {
   title:
     "Sugar Blooms | Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
   description:
-    "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic.",
+    "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic. Order freshly baked cupcakes for birthdays, weddings, and special occasions in London.",
   keywords: [
     "London cupcakes",
     "handcrafted cupcakes",
     "bakery London",
-    "custom cupcakes",
+    "custom cupcakes London",
     "Sugar Blooms",
-    "order cupcakes online",
-    "birthday cupcakes",
-    "wedding cupcakes",
+    "order cupcakes online London",
+    "birthday cupcakes London",
+    "wedding cupcakes London",
     "cupcake delivery London",
+    "boutique cupcakes",
+    "artisan cupcakes",
+    "special occasion cupcakes",
+    "best cupcakes London",
+    "North London bakery",
+    "custom cake orders London"
   ],
   alternates: {
     canonical: "https://sugarblooms.co.uk",

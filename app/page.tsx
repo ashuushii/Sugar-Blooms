@@ -18,14 +18,14 @@ function MobileImageSlider() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     // Initial check
     checkMobile();
 
     // Add resize listener
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -53,11 +53,16 @@ function MobileImageSlider() {
       <div className="hidden md:block relative">
         <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
           {[1, 2].map((index) => (
-            <div key={index} className="group relative transform transition-all duration-300 hover:scale-105">
+            <div
+              key={index}
+              className="group relative transform transition-all duration-300 hover:scale-105"
+            >
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src={`/carousel${index + currentPair * 2}.png`}
-                  alt={`Sugar Blooms cupcakes showcase ${index + currentPair * 2}`}
+                  alt={`Sugar Blooms cupcakes showcase ${
+                    index + currentPair * 2
+                  }`}
                   fill
                   priority={index === 1}
                   className="object-cover transform transition-transform duration-500 group-hover:scale-110"
@@ -74,8 +79,18 @@ function MobileImageSlider() {
             className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
             aria-label="Previous images"
           >
-            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-6 h-6 text-pink-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
           <button
@@ -83,8 +98,18 @@ function MobileImageSlider() {
             className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
             aria-label="Next images"
           >
-            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-6 h-6 text-pink-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
         </div>
@@ -97,7 +122,7 @@ function MobileImageSlider() {
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-700 ${
-                (index - 1) === currentPair ? "opacity-100" : "opacity-0"
+                index - 1 === currentPair ? "opacity-100" : "opacity-0"
               }`}
             >
               <Image
@@ -181,7 +206,7 @@ export default function Component() {
                   <div className="flex justify-center">
                     <div
                       className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer"
-                      style={{ maxWidth: 'min(500px, 100%)' }}
+                      style={{ maxWidth: "min(500px, 100%)" }}
                       tabIndex={0}
                       onMouseEnter={() => setShowPopup(true)}
                       onMouseLeave={() => setShowPopup(false)}
@@ -228,31 +253,58 @@ export default function Component() {
                     {
                       icon: <Hand className="w-8 h-8 text-pink-400" />,
                       title: "Handcrafted with Love",
-                      description: "Every order is prepared from scratch by one pair of hands with care and attention to detail"
+                      description:
+                        "Every order is prepared from scratch by one pair of hands with care and attention to detail",
                     },
                     {
                       icon: <Sparkles className="w-8 h-8 text-pink-400" />,
                       title: "Quality Ingredients",
-                      description: "Made with British-sourced ingredients, organic British flour, and free-range eggs for the perfect taste"
+                      description:
+                        "Made with British-sourced ingredients, organic British flour, and free-range eggs for the perfect taste",
                     },
                     {
                       icon: <Coffee className="w-8 h-8 text-pink-400" />,
                       title: "Made Fresh Daily",
-                      description: "Baked to order, in our kitchen for maximum flavor and freshness"
+                      description:
+                        "Baked to order, in our kitchen for maximum flavor and freshness",
                     },
                     {
-                      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-pink-400"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>,
-                      title: "Locally Based",
-                      description: "Proudly serving our community from our North London bakery"
-                    }
+                      icon: (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-8 h-8 text-pink-400"
+                        >
+                          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                          <circle cx="12" cy="10" r="3" />
+                        </svg>
+                      ),
+                      title: "North London Based",
+                      description:
+                        "Collection available from Colindale, Barnet NW9",
+                    },
                   ].map((feature, index) => (
-                    <Card key={index} className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                    <Card
+                      key={index}
+                      className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                    >
                       <CardContent className="p-4 lg:p-8 text-center">
                         <div className="bg-pink-50 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                           {feature.icon}
                         </div>
-                        <h3 className="text-base lg:text-xl font-bold text-pink-600 mb-2 lg:mb-3 font-serif">{feature.title}</h3>
-                        <p className="text-sm lg:text-base text-pink-700 leading-relaxed">{feature.description}</p>
+                        <h3 className="text-base lg:text-xl font-bold text-pink-600 mb-2 lg:mb-3 font-serif">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm lg:text-base text-pink-700 leading-relaxed">
+                          {feature.description}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
@@ -290,7 +342,9 @@ export default function Component() {
       <section className="py-12 px-4 bg-gradient-to-b from-transparent to-pink-50/50">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-pink-600 mb-4 font-serif">Customer Reviews</h2>
+            <h2 className="text-4xl font-bold text-pink-600 mb-4 font-serif">
+              Customer Reviews
+            </h2>
             <p className="text-xl text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               See What Our Happy Customers Have to Say
             </p>
@@ -306,11 +360,16 @@ export default function Component() {
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                    />
                   ))}
                 </div>
                 <p className="text-pink-700 mb-6 italic">
-                  "Absolutely loved these cupcakes! Super fresh, fluffy, and full of flavor. You can tell a lot of care went into baking them. Definitely coming back for more."
+                  "Absolutely loved these cupcakes! Super fresh, fluffy, and
+                  full of flavor. You can tell a lot of care went into baking
+                  them. Definitely coming back for more."
                 </p>
                 <p className="text-pink-600 font-medium">- josh h.</p>
               </Card>
@@ -318,7 +377,10 @@ export default function Component() {
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                    />
                   ))}
                 </div>
                 <p className="text-pink-700 mb-6 italic">
@@ -330,11 +392,16 @@ export default function Component() {
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                    />
                   ))}
                 </div>
                 <p className="text-pink-700 mb-6 italic">
-                  "The cupcakes had the cutest ribbon designs, and the icing was just the right kind of sweet. The cake stayed super soft even after hours! I'm definitely ordering more in the future!"
+                  "The cupcakes had the cutest ribbon designs, and the icing was
+                  just the right kind of sweet. The cake stayed super soft even
+                  after hours! I'm definitely ordering more in the future!"
                 </p>
                 <p className="text-pink-600 font-medium">- Elvina L.</p>
               </Card>
@@ -344,11 +411,16 @@ export default function Component() {
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                    />
                   ))}
                 </div>
                 <p className="text-pink-700 mb-6 italic">
-                  "I treated myself to these gorgeous cupcakes and they exceeded all expectations! The rose flavoring is so unique and delicate. Pure perfection!"
+                  "I treated myself to these gorgeous cupcakes and they exceeded
+                  all expectations! The rose flavoring is so unique and
+                  delicate. Pure perfection!"
                 </p>
                 <p className="text-pink-600 font-medium">- Charlotte W.</p>
               </Card>
@@ -364,7 +436,6 @@ export default function Component() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
