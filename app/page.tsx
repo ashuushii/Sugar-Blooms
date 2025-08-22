@@ -68,24 +68,26 @@ function MobileImageSlider() {
           ))}
         </div>
         {/* Navigation Arrows */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200"
-          aria-label="Previous images"
-        >
-          <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200"
-          aria-label="Next images"
-        >
-          <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        <div className="absolute inset-x-4 lg:inset-x-8 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
+          <button
+            onClick={handlePrev}
+            className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+            aria-label="Previous images"
+          >
+            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+            aria-label="Next images"
+          >
+            <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Slideshow */}
@@ -174,19 +176,36 @@ export default function Component() {
           <div className="container mx-auto text-center relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="mb-12 transform transition-all duration-700 ease-out">
-                <div
-                  className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer w-[500px]"
-                  tabIndex={0}
-                  onMouseEnter={() => setShowPopup(true)}
-                  onMouseLeave={() => setShowPopup(false)}
-                  onFocus={() => setShowPopup(true)}
-                  onBlur={() => setShowPopup(false)}
-                >
-                  <span className="text-lg font-bold text-yellow-700 tracking-wide inline-block w-full">
-                    {showPopup
-                      ? "🎉 20% off for your first order!"
-                      : "Grand Opening: September 1st, 2025!"}
-                  </span>
+                {/* Desktop Version - with hover effect */}
+                <div className="hidden md:block">
+                  <div
+                    className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer w-[500px]"
+                    tabIndex={0}
+                    onMouseEnter={() => setShowPopup(true)}
+                    onMouseLeave={() => setShowPopup(false)}
+                    onFocus={() => setShowPopup(true)}
+                    onBlur={() => setShowPopup(false)}
+                  >
+                    <span className="text-lg font-bold text-yellow-700 tracking-wide inline-block w-full">
+                      {showPopup
+                        ? "🎉 20% off for your first order!"
+                        : "Grand Opening: September 1st, 2025!"}
+                    </span>
+                  </div>
+                </div>
+                {/* Mobile Version - stacked text in same box */}
+                <div className="md:hidden flex justify-center">
+                  <div className="bg-yellow-100 border-2 border-yellow-400 rounded-xl px-4 py-3 shadow-lg animate-pulse w-full max-w-[300px]">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-base font-bold text-yellow-700 tracking-wide text-center block">
+                        Grand Opening: September 1st, 2025!
+                      </span>
+                      <div className="h-px bg-yellow-400/50 w-full" />
+                      <span className="text-base font-bold text-yellow-700 tracking-wide text-center block">
+                        🎉 20% off for your first order!
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
