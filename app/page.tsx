@@ -175,14 +175,14 @@ export default function Component() {
             <div className="max-w-6xl mx-auto">
               <div className="mb-12 transform transition-all duration-700 ease-out">
                 <div
-                  className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-6 py-3 shadow-lg animate-pulse cursor-pointer"
+                  className="inline-block bg-yellow-100 border-2 border-yellow-400 rounded-xl px-12 py-3 shadow-lg animate-pulse cursor-pointer w-[500px]"
                   tabIndex={0}
                   onMouseEnter={() => setShowPopup(true)}
                   onMouseLeave={() => setShowPopup(false)}
                   onFocus={() => setShowPopup(true)}
                   onBlur={() => setShowPopup(false)}
                 >
-                  <span className="text-lg font-bold text-yellow-700 tracking-wide">
+                  <span className="text-lg font-bold text-yellow-700 tracking-wide inline-block w-full">
                     {showPopup
                       ? "🎉 20% off for your first order!"
                       : "Grand Opening: September 1st, 2025!"}
