@@ -225,12 +225,12 @@ export default function Component() {
                     }
                   ].map((feature, index) => (
                     <Card key={index} className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                      <CardContent className="p-4 md:p-8 text-center">
-                        <div className="bg-pink-50 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <CardContent className="p-4 lg:p-8 text-center">
+                        <div className="bg-pink-50 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                           {feature.icon}
                         </div>
-                        <h3 className="text-base md:text-xl font-bold text-pink-600 mb-2 md:mb-3 font-serif">{feature.title}</h3>
-                        <p className="text-sm md:text-base text-pink-700 leading-relaxed">{feature.description}</p>
+                        <h3 className="text-base lg:text-xl font-bold text-pink-600 mb-2 lg:mb-3 font-serif">{feature.title}</h3>
+                        <p className="text-sm lg:text-base text-pink-700 leading-relaxed">{feature.description}</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -268,8 +268,16 @@ export default function Component() {
       <section className="py-12 px-4 bg-gradient-to-b from-transparent to-pink-50/50">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="mb-8">
-              <h2 className="text-4xl font-bold text-pink-600 font-serif">Customer Reviews</h2>
+            <h2 className="text-4xl font-bold text-pink-600 mb-4 font-serif">Customer Reviews</h2>
+            <p className="text-xl text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
+              See What Our Happy Customers Have to Say
+            </p>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              <span className="text-pink-500 text-sm font-medium">
+                Sweet Reviews
+              </span>
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-8">

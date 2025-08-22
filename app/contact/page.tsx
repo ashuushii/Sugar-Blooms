@@ -154,10 +154,10 @@ export default function ContactPage() {
           </Card>
 
           <div className="space-y-8">
-            <Card className="bg-gradient-to-br from-pink-50 to-rose-50 border-3 border-pink-200 rounded-3xl shadow-2xl">
+            <Card className="bg-pink-50 border-3 border-pink-200 rounded-3xl shadow-2xl">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
+                  <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
                   <h2 className="text-2xl font-bold text-pink-600 font-serif">
                     Ready to Order?
                   </h2>
@@ -185,7 +185,7 @@ export default function ContactPage() {
             <Card className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Sparkles className="w-6 h-6 text-pink-500" />
+                  <Sparkles className="w-6 h-6 text-pink-400" />
                   <h2 className="text-2xl font-bold text-pink-600 font-serif">
                     Order Details
                   </h2>
@@ -219,7 +219,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-pink-100 via-rose-100 to-pink-100 rounded-3xl p-12 border-3 border-pink-200 shadow-2xl text-center">
+        <div className="bg-pink-50 rounded-3xl p-12 border-3 border-pink-200 shadow-2xl text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Heart className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             <h2 className="text-4xl font-bold text-pink-600 font-serif">

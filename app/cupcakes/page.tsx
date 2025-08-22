@@ -74,10 +74,15 @@ export default function CupcakesPage() {
         {cupcakeCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="mb-20">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-pink-600 font-serif mb-2">
+              <h2 className="text-3xl font-bold text-pink-600 font-serif mb-4">
                 {category.title}
               </h2>
-              <p className="text-pink-500 italic">{category.description}</p>
+              <p className="text-pink-500 italic mb-4">{category.description}</p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+                <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -158,17 +163,18 @@ export default function CupcakesPage() {
         ))}
 
         <div className="mt-20 text-center bg-pink-50 rounded-3xl p-8 border-2 border-pink-200">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-            <h3 className="text-2xl font-bold text-pink-600 font-serif">
-              Custom Orders
-            </h3>
-            <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-          </div>
+          <h3 className="text-2xl font-bold text-pink-600 font-serif mb-4">
+            Custom Orders
+          </h3>
           <p className="text-pink-700 mb-6 leading-relaxed">
             Have something special in mind? We love creating bespoke cupcakes
             for your celebrations!
           </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+            <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
+            <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+          </div>
           <Button
             className="bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-bold rounded-full px-8 py-3 shadow-lg transform hover:scale-105 transition-all"
             asChild

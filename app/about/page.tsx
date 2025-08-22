@@ -18,32 +18,32 @@ export default function AboutPage() {
             <p className="text-xl md:text-2xl text-pink-700 mb-8 font-light leading-relaxed">
               Where Dreams Meet Frosting and Every Bite Tells a Story
             </p>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-200 to-transparent flex-1 max-w-20" />
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
                 Handcrafted with Love
               </span>
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-200 to-transparent flex-1 max-w-20" />
+              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
           </div>
         </div>
       </section>
       <div className="container mx-auto max-w-6xl px-4">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="relative">
+        <div className="flex flex-col items-center gap-8 mb-20">
+          <div className="relative max-w-2xl mx-auto">
             <Image
               src="/baking.png"
               alt="anime style illustration of a baker decorating cupcakes"
-              width={500}
-              height={500}
+              width={300}
+              height={300}
               className="rounded-3xl shadow-2xl border-4 border-white relative z-0"
             />
           </div>
           
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
             <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
-              <h2 className="text-3xl font-bold text-pink-600 mb-4 font-serif">              Our Story</h2>
+              <h2 className="text-3xl font-bold text-pink-600 mb-4 font-serif">Our Story</h2>
               <p className="text-lg text-pink-700 leading-relaxed mb-4">
                 What began as a simple hobby in my cozy London kitchen quickly became a passion for creating joy, one cupcake at a time.
               </p>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
-              <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif">              Our Mission</h3>
+              <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif">Our Mission</h3>
               <p className="text-lg text-rose-700 leading-relaxed">
                 To turn everyday moments into celebrations and make your day a little brighter, a lot sweeter.
               </p>
