@@ -70,19 +70,22 @@ export const businessSchema = {
   ]
 };
 
+// Ensure the schema file is a valid module
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://sugarblooms.co.uk/#website",
   "url": "https://sugarblooms.co.uk",
   "name": "Sugar Blooms",
-  "description": "Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
+  "description": "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic.",
   "publisher": {
     "@type": "Organization",
     "name": "Sugar Blooms",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://sugarblooms.co.uk/sugarblooms.png"
+      "url": "https://sugarblooms.co.uk/sugarblooms.png",
+      "width": 512,
+      "height": 512
     }
   }
 };

@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     "best cupcakes London",
     "North London bakery",
     "custom cake orders London",
+    "sugarblooms",
+    "sugarbloomsbakery",
+    "pink cupcakes London",
+    "luxury cupcakes London",
   ],
   alternates: {
     canonical: "https://sugarblooms.co.uk",
