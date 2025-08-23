@@ -45,12 +45,10 @@ export default function CupcakesPage() {
       <section className="pt-16 pb-18 px-4 relative">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
+            <div className="mb-6">
               <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
                 Our Cupcakes
               </h1>
-              <Sparkles className="w-8 h-8 text-pink-400 fill-pink-400 animate-pulse" />
             </div>
             <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               Each cupcake is handcrafted with love, premium ingredients, and a

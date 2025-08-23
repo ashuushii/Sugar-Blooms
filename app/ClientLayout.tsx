@@ -4,10 +4,12 @@ import type React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { Menu, X, Instagram, MessageCircle } from "lucide-react";
+import { Menu, X, Instagram, Search } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SearchOverlay } from "@/components/ui/search-overlay";
 import { useState, useEffect, useRef } from "react";
+import { AuthProvider } from "@/components/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +21,7 @@ export default function ClientLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -57,8 +60,8 @@ export default function ClientLayout({
       if (currentScrollY < lastScrollY) {
         // Scrolling up
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and not at the top
+      } else if (currentScrollY > lastScrollY && currentScrollY > window.innerHeight * 0.25) {
+        // Scrolling down and past 25% of viewport height
         setIsVisible(false);
       }
 
@@ -108,20 +111,24 @@ export default function ClientLayout({
         className={inter.className}
         onContextMenu={(e) => e.preventDefault()}
       >
-        <BowBackground />
-        <div className="min-h-screen relative z-10">
-          {/* Navigation */}
+        <AuthProvider>
+          <BowBackground />
+          <div className="min-h-screen relative z-10">
+            {/* Navigation */}
           <header
             className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
               isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"
             }`}
           >
-            <nav className="bg-white border-b border-gray-200 px-2 md:px-10 py-2 shadow-sm relative">
-              <div className="flex items-center justify-between relative w-full max-w-7xl mx-auto">
+            <div className="bg-gradient-to-r from-pink-400 to-rose-400 text-white text-center py-1 text-sm font-medium">
+              🎉 Grand Opening: September 1st, 2025 ｜ 20% off for your first order! 🎉
+            </div>
+            <nav className="bg-white border-b border-gray-200 px-2 md:px-10 py-1 shadow-sm relative">
+              <div className="flex items-center relative w-full max-w-7xl mx-auto">
                 <button
                   ref={menuButtonRef}
                   onClick={toggleMenu}
-                  className="p-3 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  className="absolute left-0 p-3 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
                   {isMenuOpen ? (
                     <X className="w-7 h-7" />
@@ -129,41 +136,37 @@ export default function ClientLayout({
                     <Menu className="w-7 h-7" />
                   )}
                 </button>
-                <div className="flex items-center justify-center flex-1">
+                <div className="flex items-center justify-center w-full">
                   <a href="/" className="hover:opacity-80 transition-opacity">
                     <Image
                       src="/sugarbloomsbakery.png"
                       alt="Sugar Blooms Logo"
                       width={400}
                       height={400}
-                      className="py-1 w-[260px] md:w-[600px]"
+                      className="py-1 w-[230px] md:w-[400px]"
                     />
                   </a>
                 </div>
-                <div className="flex items-center justify-center">
-                  <a
-                    href="https://wa.me/447907169798"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="md:hidden p-2 -mr-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
-                  >
-                    <MessageCircle className="w-7 h-7" />
-                  </a>
-                </div>
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  className="absolute right-0 p-3 -mr-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                >
+                  <Search className="w-7 h-7" />
+                </button>
               </div>
 
               {/* Dropdown Menu */}
               <div
                 ref={menuRef}
-                className={`absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-md border-2 border-pink-200 rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-500 ease-out ${
+                className={`absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-sm overflow-hidden transform transition-all duration-300 ease-out ${
                   isMenuOpen
                     ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-4 pointer-events-none"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
                 <div
-                  className={`py-2 flex flex-col items-center ${
-                    isMenuOpen ? "animate-[slideDown_0.3s_ease-out]" : ""
+                  className={`flex flex-col items-center ${
+                    isMenuOpen ? "animate-[slideDown_0.2s_ease-out]" : ""
                   }`}
                 >
                   <a
@@ -337,6 +340,12 @@ export default function ClientLayout({
                     >
                       Contact
                     </a>
+                    <a
+                      href="/faq"
+                      className="text-pink-700 hover:text-pink-800 transition-colors text-lg"
+                    >
+                      FAQs + T&Cs
+                    </a>
                   </nav>
                 </div>
               </div>
@@ -380,7 +389,9 @@ export default function ClientLayout({
             </div>
           </footer>
           <SpeedInsights />
+          <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </div>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -2,4 +2,6 @@ ignoredBuiltDependencies:
   - '@vercel/speed-insights'
 
 onlyBuiltDependencies:
+  - '@prisma/client'
+  - bcrypt
   - sharp
