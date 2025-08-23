@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signOut, useSession } from "next-auth/react";
 
 export default function AdminDashboard() {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
   const [passwordForm, setPasswordForm] = useState({
     currentPassword: "",
@@ -16,6 +16,16 @@ export default function AdminDashboard() {
   });
   const [passwordError, setPasswordError] = useState("");
   const [passwordSuccess, setPasswordSuccess] = useState("");
+
+  useEffect(() => {
+    // Check if user is authenticated
+    const authStatus = sessionStorage.getItem("isAdminAuthenticated");
+    if (!authStatus) {
+      router.push("/admin");
+    } else {
+      setIsAuthenticated(true);
+    }
+  }, [router]);
 
   const handlePasswordChange = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,18 +61,12 @@ export default function AdminDashboard() {
   };
 
   const handleLogout = () => {
-    signOut({ callbackUrl: "/admin" });
+    sessionStorage.removeItem("isAdminAuthenticated");
+    router.push("/admin");
   };
 
-  const { data: session, status } = useSession();
-
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (!session) {
-    router.push("/admin");
-    return null;
+  if (!isAuthenticated) {
+    return null; // Or a loading spinner
   }
 
   return (

@@ -9,7 +9,6 @@ import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SearchOverlay } from "@/components/ui/search-overlay";
 import { useState, useEffect, useRef } from "react";
-import { AuthProvider } from "@/components/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -111,10 +110,9 @@ export default function ClientLayout({
         className={inter.className}
         onContextMenu={(e) => e.preventDefault()}
       >
-        <AuthProvider>
-          <BowBackground />
-          <div className="min-h-screen relative z-10">
-            {/* Navigation */}
+        <BowBackground />
+        <div className="min-h-screen relative z-10">
+          {/* Navigation */}
           <header
             className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
               isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"
@@ -391,7 +389,6 @@ export default function ClientLayout({
           <SpeedInsights />
           <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </div>
-        </AuthProvider>
       </body>
     </html>
   );

@@ -3,36 +3,28 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setError("");
     
-    try {
-      const result = await signIn("credentials", {
-        username,
-        password,
-        redirect: false,
-      });
-
-      if (result?.error) {
-        setError("Invalid credentials");
-      }
-      // Successful login will be handled by middleware redirect
-    } catch (error) {
-      setError("An error occurred during login");
-    } finally {
-      setIsLoading(false);
+    // This is a simple example. In a real application, you should:
+    // 1. Use proper authentication (like NextAuth.js)
+    // 2. Never store credentials in the code
+    // 3. Use HTTPS
+    // 4. Implement proper session management
+    if (username === "admin" && password === "sugarbloomsadmin") {
+      // Store authentication state (use a proper auth solution in production)
+      sessionStorage.setItem("isAdminAuthenticated", "true");
+      router.push("/admin/dashboard");
+    } else {
+      setError("Invalid credentials");
     }
   };
 
