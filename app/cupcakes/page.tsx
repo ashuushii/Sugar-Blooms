@@ -9,8 +9,6 @@ import { Badge } from "@/components/ui/badge";
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
-      title: "Sweet Selection:",
-      description: "our most popular cupcakes, loved by all",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
@@ -44,7 +42,7 @@ export default function CupcakesPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-20">
-      <section className="py-16 px-4 relative">
+      <section className="pt-16 pb-18 px-4 relative">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -79,11 +77,6 @@ export default function CupcakesPage() {
               <p className="text-pink-500 italic mb-4">
                 {category.description}
               </p>
-              <div className="flex items-center justify-center gap-4">
-                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-                <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
-                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

@@ -214,11 +214,11 @@ export default function Component() {
       <header>
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-2 md:px-4 relative pt-32 md:pt-48 overflow-hidden"
+          className="min-h-screen flex items-center justify-center px-2 md:px-4 relative pt-40 md:pt-48 overflow-hidden"
         >
           <div className="container mx-auto text-center relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="mb-8 md:mb-12 transform transition-all duration-700 ease-out">
+              <div className="mt-4 mb-8 md:mb-12 transform transition-all duration-700 ease-out">
                 {/* Desktop Version - with hover effect */}
                 <div className="hidden md:block relative w-full">
                   <div className="flex justify-center">
@@ -334,12 +334,6 @@ export default function Component() {
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
                     <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                   </div>
-
-                  <p className="text-pink-700/80 mb-6 font-light leading-relaxed max-w-2xl mx-auto text-center">
-                    Delicate cupcakes crafted with intention, decorated with
-                    dreams.
-                  </p>
-
                   <div className="text-center">
                     <Button
                       size="lg"
