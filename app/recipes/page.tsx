@@ -182,8 +182,7 @@ export default function RecipesPage() {
             <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
               Bake with Love and Create Your Own Sweet Magic at Home
             </p>
-            <div className="flex items-center justify-center gap-4 mb-4">
-            </div>
+            <div className="flex items-center justify-center gap-4 mb-4"></div>
             <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">

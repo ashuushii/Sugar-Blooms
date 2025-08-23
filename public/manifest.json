@@ -7,6 +7,27 @@
   "background_color": "#fdf2f8",
   "theme_color": "#ec4899",
   "orientation": "portrait-primary",
+  "categories": ["food", "shopping", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/website-banner.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Sugar Blooms Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Cupcakes",
+      "url": "/cupcakes",
+      "description": "Browse our cupcake selection"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact",
+      "description": "Get in touch with us"
+    }
+  ],
   "icons": [
     {
       "src": "/sb-logo.png",

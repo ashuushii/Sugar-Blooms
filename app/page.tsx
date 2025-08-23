@@ -33,7 +33,7 @@ function MobileImageSlider() {
   useEffect(() => {
     // Only run auto-switching if mobile and component is mounted
     let mounted = true;
-    
+
     if (!isMobile) return;
 
     const timer = setInterval(() => {
@@ -146,7 +146,9 @@ function MobileImageSlider() {
                 priority={index === 1}
                 loading={index === 1 ? "eager" : "lazy"}
                 onLoad={() => index === 1 && setIsLoaded(true)}
-                className={`object-cover transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`object-cover transition-opacity duration-500 ${
+                  isLoaded ? "opacity-100" : "opacity-0"
+                }`}
               />
             </div>
           ))}
