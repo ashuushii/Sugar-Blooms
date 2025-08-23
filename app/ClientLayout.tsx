@@ -116,27 +116,27 @@ export default function ClientLayout({
               isVisible ? "top-8 opacity-100" : "-top-24 opacity-0"
             }`}
           >
-            <nav className="bg-white/90 backdrop-blur-md border-2 border-pink-200 rounded-full px-10 py-1 shadow-2xl relative max-w-7xl mx-auto">
+            <nav className="bg-white/90 backdrop-blur-md border-2 border-pink-200 rounded-full px-4 md:px-10 py-1 shadow-2xl relative max-w-7xl mx-auto">
               <div className="flex items-center justify-between relative w-full">
                 <button
                   ref={menuButtonRef}
                   onClick={toggleMenu}
-                  className="p-2 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  className="p-2 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
                   {isMenuOpen ? (
-                    <X className="w-5 h-5" />
+                    <X className="w-6 h-6" />
                   ) : (
-                    <Menu className="w-5 h-5" />
+                    <Menu className="w-6 h-6" />
                   )}
                 </button>
-                <div className="flex items-center justify-center flex-1">
+                <div className="flex items-center justify-center flex-1 px-2">
                   <a href="/" className="hover:opacity-80 transition-opacity">
                     <Image
                       src="/sugarbloomsbakery.png"
                       alt="Sugar Blooms Logo"
                       width={400}
                       height={400}
-                      className="py-4"
+                      className="py-1 w-[380px] md:w-[400px]"
                     />
                   </a>
                 </div>
@@ -145,9 +145,9 @@ export default function ClientLayout({
                     href="https://wa.me/447907169798"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="md:hidden p-2 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                    className="md:hidden p-2 -mr-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <MessageCircle className="w-6 h-6" />
                   </a>
                 </div>
               </div>

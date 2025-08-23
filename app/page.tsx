@@ -125,7 +125,7 @@ function MobileImageSlider() {
       </div>
 
       {/* Mobile Slideshow */}
-      <div className="md:hidden relative max-w-md mx-auto">
+      <div className="md:hidden relative max-w-[95vw] mx-auto">
         {!isLoaded && (
           <div className="absolute inset-0 bg-pink-50 rounded-2xl flex items-center justify-center">
             <div className="w-8 h-8 border-4 border-pink-400 border-t-transparent rounded-full animate-spin"></div>
@@ -214,11 +214,11 @@ export default function Component() {
       <header>
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-4 relative pt-40 md:pt-48 overflow-hidden"
+          className="min-h-screen flex items-center justify-center px-2 md:px-4 relative pt-32 md:pt-48 overflow-hidden"
         >
           <div className="container mx-auto text-center relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="mb-12 transform transition-all duration-700 ease-out">
+              <div className="mb-8 md:mb-12 transform transition-all duration-700 ease-out">
                 {/* Desktop Version - with hover effect */}
                 <div className="hidden md:block relative w-full">
                   <div className="flex justify-center">
@@ -265,8 +265,8 @@ export default function Component() {
                 <MobileImageSlider />
               </div>
 
-              <div className="py-12">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+              <div className="py-6 md:py-12">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-8">
                   {[
                     {
                       icon: <Hand className="w-8 h-8 text-pink-400" />,
@@ -313,14 +313,14 @@ export default function Component() {
                       key={index}
                       className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
                     >
-                      <CardContent className="p-4 lg:p-8 text-center">
-                        <div className="bg-pink-50 w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <CardContent className="p-2 md:p-4 lg:p-8 text-center">
+                        <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                           {feature.icon}
                         </div>
-                        <h3 className="font-bold text-pink-600 mb-2 lg:mb-3 font-serif">
+                        <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
                           {feature.title}
                         </h3>
-                        <p className="text-pink-700 leading-relaxed">
+                        <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
                           {feature.description}
                         </p>
                       </CardContent>
