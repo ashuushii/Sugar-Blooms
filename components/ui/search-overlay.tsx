@@ -3,6 +3,16 @@ import { useEffect, useState, useRef } from "react";
 import { searchData } from "@/lib/search-data";
 import { searchItems } from "@/lib/search-utils";
 import { useDebounce } from "@/hooks/use-debounce";
+import Fuse from "fuse.js";
+
+// Define types for Fuse.js results
+interface SearchResult {
+  title: string;
+  description: string;
+  url: string;
+  category: string;
+  tags?: string[];
+}
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -13,7 +23,21 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const debouncedQuery = useDebounce(searchQuery, 200);
-  const searchResults = searchItems(debouncedQuery, searchData);
+
+  // Optimize Fuse.js configuration for better typo tolerance and prioritization
+  const fuse = new Fuse<SearchResult>(searchData, {
+    keys: ["title", "description", "tags"],
+    threshold: 0.2, // Lower threshold for stricter matches
+    minMatchCharLength: 1, // Match after typing at least 1 character
+    distance: 100, // Prioritize closer matches
+    useExtendedSearch: true, // Enable extended search for partial matches
+  });
+
+  // Use Fuse.js to get fuzzy search results
+  const searchResults: SearchResult[] = debouncedQuery
+    ? fuse.search(debouncedQuery).map((result) => result.item)
+    : [];
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Reset selected index when query changes
@@ -91,6 +115,42 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     }
   };
 
+  // Add quick link for ordering via WhatsApp if query is "order"
+  const orderKeywords = [
+    "order",
+    "how to order",
+    "place order",
+    "ordering",
+    "buy",
+    "purchase",
+    "get cupcakes",
+  ];
+  if (
+    orderKeywords.some((keyword) =>
+      debouncedQuery.toLowerCase().includes(keyword)
+    )
+  ) {
+    searchResults.unshift({
+      title: "Order Now",
+      description: "Place your order via WhatsApp",
+      url: "https://wa.me/447907169798",
+      category: "general",
+    });
+  }
+
+  // Ensure 'location' is always suggested as a top result for relevant queries
+  if (
+    debouncedQuery.toLowerCase().includes("lo") ||
+    debouncedQuery.toLowerCase().includes("find")
+  ) {
+    searchResults.unshift({
+      title: "Location",
+      description: "Find us on Google Maps",
+      url: "https://maps.app.goo.gl/m5DiwzKhFmfDiVMm7",
+      category: "general",
+    });
+  }
+
   return (
     <div
       className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-200"
@@ -135,61 +195,63 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                 <div ref={containerRef}>
                   {searchResults.length > 0 ? (
                     <div className="space-y-2 divide-y divide-pink-100/30">
-                      {searchResults.map((result, index) => (
-                        <a
-                          key={result.url}
-                          href={result.url}
-                          className={`block p-4 rounded-xl transition-all duration-200 ${
-                            index === selectedIndex
-                              ? "bg-gradient-to-r from-pink-50 to-pink-50/30 shadow-sm"
-                              : "hover:bg-pink-50/30"
-                          }`}
-                          data-selected={index === selectedIndex}
-                          onMouseEnter={() => setSelectedIndex(index)}
-                        >
-                          <div className="flex items-start gap-4">
-                            <span className="text-2xl transform transition-transform duration-300 group-hover:scale-110">
-                              {getCategoryIcon(result.category)}
-                            </span>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2 mb-1">
-                                <div className="font-medium text-pink-600 truncate">
-                                  {result.title}
+                      {searchResults.map(
+                        (result: SearchResult, index: number) => (
+                          <a
+                            key={result.url}
+                            href={result.url}
+                            target="_blank" // Open in new tab
+                            rel="noopener noreferrer" // Security best practice
+                            className={`block p-4 rounded-xl transition-all duration-200 ${
+                              index === selectedIndex
+                                ? "bg-gradient-to-r from-pink-50 to-pink-50/30 shadow-sm"
+                                : "hover:bg-pink-50/30"
+                            }`}
+                            data-selected={index === selectedIndex}
+                            onMouseEnter={() => setSelectedIndex(index)}
+                          >
+                            <div className="flex items-start gap-4">
+                              <span className="text-2xl transform transition-transform duration-300 group-hover:scale-110">
+                                {getCategoryIcon(result.category)}
+                              </span>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <div className="font-medium text-pink-600 truncate">
+                                    {result.title}
+                                  </div>
+                                  <span className="hidden md:inline-flex px-2 py-0.5 text-xs font-medium text-pink-500 bg-pink-50 rounded-full">
+                                    {result.category}
+                                  </span>
                                 </div>
-                                <span className="hidden md:inline-flex px-2 py-0.5 text-xs font-medium text-pink-500 bg-pink-50 rounded-full">
-                                  {result.category}
-                                </span>
-                              </div>
-                              <div className="text-sm text-pink-500 line-clamp-2">
-                                {result.description}
-                              </div>
-                              {result.tags && (
-                                <div className="flex flex-wrap gap-1 mt-2">
-                                  {result.tags.slice(0, 3).map((tag) => (
+                                <div className="text-sm text-pink-500 line-clamp-2">
+                                  {result.description}
+                                </div>
+                                {result.tags?.slice(0, 3).map((tag: string) => (
+                                  <div className="flex flex-wrap gap-1 mt-2">
                                     <span
                                       key={tag}
                                       className="px-2 py-0.5 text-xs text-pink-400 bg-pink-50/50 rounded-full"
                                     >
                                       {tag}
                                     </span>
-                                  ))}
-                                </div>
-                              )}
+                                  </div>
+                                ))}
+                              </div>
+                              <div
+                                className={`hidden md:flex items-center text-pink-400 transition-opacity duration-200 ${
+                                  index === selectedIndex
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                                }`}
+                              >
+                                <kbd className="px-2 py-1 text-xs font-sans font-semibold bg-pink-50 rounded-lg">
+                                  ↵
+                                </kbd>
+                              </div>
                             </div>
-                            <div
-                              className={`hidden md:flex items-center text-pink-400 transition-opacity duration-200 ${
-                                index === selectedIndex
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              }`}
-                            >
-                              <kbd className="px-2 py-1 text-xs font-sans font-semibold bg-pink-50 rounded-lg">
-                                ↵
-                              </kbd>
-                            </div>
-                          </div>
-                        </a>
-                      ))}
+                          </a>
+                        )
+                      )}
                     </div>
                   ) : (
                     <div className="text-center py-12">

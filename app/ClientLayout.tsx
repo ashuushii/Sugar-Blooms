@@ -265,7 +265,7 @@ export default function ClientLayout({
                     See our socials below, we'd love if you could leave a
                     review!
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 mb-6">
                     <a
                       href="https://instagram.com/sugarbloomsco"
                       target="_blank"
@@ -302,6 +302,30 @@ export default function ClientLayout({
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                       </svg>
                     </a>
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="text-2xl font-serif font-bold text-pink-600 mb-4">
+                      My Apps
+                    </h3>
+                    <div className="flex gap-4">
+                      <a
+                        href="/calculator"
+                        className="text-pink-700 hover:text-pink-800 transition-colors text-lg flex items-center gap-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          className="text-pink-600"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" />
+                          <path d="M2 5h12V4H2v1zm2 2h2V6H4v1zm0 2h2V8H4v1zm0 2h2v-1H4v1zm3-4h2V6H7v1zm0 2h2V8H7v1zm0 2h2v-1H7v1zm3-4h2V6h-2v1zm0 2h2V8h-2v1zm0 2h2v-1h-2v1z" />
+                        </svg>
+                        Calculator
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -346,12 +370,6 @@ export default function ClientLayout({
                       className="text-pink-700 hover:text-pink-800 transition-colors text-lg"
                     >
                       FAQs + T&Cs
-                    </a>
-                    <a
-                      href="/calculator"
-                      className="text-pink-700 hover:text-pink-800 transition-colors text-lg"
-                    >
-                      Calculator
                     </a>
                   </nav>
                 </div>

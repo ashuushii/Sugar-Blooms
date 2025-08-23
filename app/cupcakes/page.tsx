@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
+      title: "Classic Cupcakes",
+      description: "Our signature collection of classic cupcakes.",
       cupcakes: [
         {
           name: "Bow Tie Elegance",

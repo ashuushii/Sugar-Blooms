@@ -280,41 +280,70 @@ export default function Component() {
                       title: "North London Based",
                       description:
                         "Collection available from Colindale, Barnet NW9",
+                      url: "https://maps.app.goo.gl/m5DiwzKhFmfDiVMm7", // Add URL
                     },
                   ].map((feature, index) => (
                     <Card
                       key={index}
                       className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
                     >
-                      <CardContent className="p-2 md:p-4 lg:p-8 text-center">
-                        <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
-                          {feature.icon}
-                        </div>
-                        <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
-                          {feature.title}
-                        </h3>
-                        <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
-                          {feature.description}
-                        </p>
-                      </CardContent>
+                      <a
+                        href={feature.url}
+                        target="_blank" // Open in new tab
+                        rel="noopener noreferrer" // Security best practice
+                      >
+                        <CardContent className="p-2 md:p-4 lg:p-8 text-center">
+                          <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                            {feature.icon}
+                          </div>
+                          <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
+                            {feature.title}
+                          </h3>
+                          <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
+                            {feature.description}
+                          </p>
+                        </CardContent>
+                      </a>
                     </Card>
                   ))}
                 </div>
 
-                <div className="mt-8 mb-4">
-                  <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="mt-4 mb-10">
+                  <div className="mt-10 mb-10 flex items-center justify-center gap-4">
                     <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                     <Heart className="w-4 h-4 text-pink-400 fill-pink-400" />
                     <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
                   </div>
                   <div className="text-center">
-                    <Button
-                      size="lg"
-                      className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-0"
-                      asChild
-                    >
-                      <a href="/contact">How to Order</a>
-                    </Button>
+                    <div className="space-y-8">
+                      <Card className="bg-pink-50 border-3 border-pink-200 rounded-3xl shadow-2xl mx-auto max-w-lg">
+                        <CardContent className="p-8">
+                          <div className="flex items-center gap-3 mb-6 justify-center">
+                            <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
+                            <h2 className="text-2xl font-bold text-pink-600 font-serif">
+                              Ready to Order?
+                            </h2>
+                          </div>
+                          <p className="text-pink-700 mb-6 leading-relaxed">
+                            Message me on WhatsApp with your dream order! Tell
+                            us about your celebration, how many cupcakes you
+                            need, and any special requests.
+                          </p>
+                          <Button
+                            className="w-full bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-bold rounded-full py-4 shadow-lg transform hover:scale-105 transition-all text-lg"
+                            asChild
+                          >
+                            <a
+                              href="https://wa.me/447907169798"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Order / Enquire Now
+                            </a>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -324,7 +353,7 @@ export default function Component() {
       </header>
 
       {/* Customer Reviews Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-transparent to-pink-50/50">
+      <section className=" px-4 bg-gradient-to-b from-transparent to-pink-50/50">
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-pink-600 mb-8 font-serif">
@@ -335,8 +364,8 @@ export default function Component() {
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1" />
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-3 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -352,8 +381,7 @@ export default function Component() {
                 </p>
                 <p className="text-pink-600 font-medium">- Josh H.</p>
               </Card>
-
-              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-3 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -367,8 +395,7 @@ export default function Component() {
                 </p>
                 <p className="text-pink-600 font-medium">- Shahan P.</p>
               </Card>
-
-              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-3 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -383,11 +410,8 @@ export default function Component() {
                   after hours! I'm definitely ordering more in the future!"
                 </p>
                 <p className="text-pink-600 font-medium">- Elvina L.</p>
-              </Card>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-6 text-center">
+              </Card>{" "}
+              <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-3 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -405,7 +429,7 @@ export default function Component() {
               </Card>
             </div>
 
-            <div className="mt-12 flex items-center justify-center">
+            <div className="mt-12 pb-8 flex items-center justify-center">
               <a
                 href="https://g.page/r/CRNbbUdMowAzEAI/review"
                 target="_blank"
