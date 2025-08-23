@@ -13,7 +13,7 @@ function MobileImageSlider() {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [lastInteraction, setLastInteraction] = useState<number | null>(null);
-  const totalImages = 3; // Total number of images
+  const totalImages = 2; // Total number of images
   const totalPairs = totalImages;
   const normalInterval = 5000; // Normal slide interval
   const extendedInterval = 10000; // Extended interval after user interaction
@@ -78,10 +78,8 @@ function MobileImageSlider() {
             >
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src={`/carousel${index + currentPair * 2}.png`}
-                  alt={`Sugar Blooms cupcakes showcase ${
-                    index + currentPair * 2
-                  }`}
+                  src={`/carousel${index}.png`}
+                  alt={`Sugar Blooms cupcakes showcase ${index}`}
                   fill
                   priority={index === 1}
                   className="object-cover transform transition-transform duration-500 group-hover:scale-110"
@@ -90,47 +88,6 @@ function MobileImageSlider() {
               </div>
             </div>
           ))}
-        </div>
-        {/* Navigation Arrows */}
-        <div className="absolute inset-x-4 lg:inset-x-8 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
-          <button
-            onClick={handlePrev}
-            className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
-            aria-label="Previous images"
-          >
-            <svg
-              className="w-6 h-6 text-pink-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={handleNext}
-            className="pointer-events-auto bg-white/80 backdrop-blur-sm border-2 border-pink-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
-            aria-label="Next images"
-          >
-            <svg
-              className="w-6 h-6 text-pink-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
       </div>
 
@@ -172,7 +129,7 @@ function MobileImageSlider() {
             document.addEventListener("touchend", handleTouchEnd);
           }}
         >
-          {[1, 2, 3].map((index) => (
+          {[1, 2].map((index) => (
             <div
               key={index}
               className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -195,7 +152,7 @@ function MobileImageSlider() {
           ))}
         </div>
         <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full">
-          {[0, 1, 2].map((index) => (
+          {[0, 1].map((index) => (
             <button
               key={index}
               className={`w-2 h-2 rounded-full transition-all ${
