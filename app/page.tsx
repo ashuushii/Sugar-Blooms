@@ -12,8 +12,11 @@ function MobileImageSlider() {
   const [currentPair, setCurrentPair] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [lastInteraction, setLastInteraction] = useState<number | null>(null);
   const totalImages = 3; // Total number of images
   const totalPairs = totalImages;
+  const normalInterval = 5000; // Normal slide interval
+  const extendedInterval = 10000; // Extended interval after user interaction
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -38,22 +41,29 @@ function MobileImageSlider() {
 
     const timer = setInterval(() => {
       if (mounted) {
+        // Check if we need to honor the extended pause
+        const now = Date.now();
+        if (lastInteraction && now - lastInteraction < extendedInterval) {
+          return; // Skip this interval
+        }
         setCurrentPair((prev) => (prev + 1) % totalPairs);
       }
-    }, 5000);
+    }, normalInterval);
 
     return () => {
       mounted = false;
       clearInterval(timer);
     };
-  }, [isMobile, totalPairs]);
+  }, [isMobile, totalPairs, lastInteraction]);
 
   const handleNext = () => {
     setCurrentPair((prev) => (prev + 1) % totalPairs);
+    setLastInteraction(Date.now());
   };
 
   const handlePrev = () => {
     setCurrentPair((prev) => (prev - 1 + totalPairs) % totalPairs);
+    setLastInteraction(Date.now());
   };
 
   return (
@@ -131,7 +141,37 @@ function MobileImageSlider() {
             <div className="w-8 h-8 border-4 border-pink-400 border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
-        <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl">
+        <div
+          className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl cursor-grab active:cursor-grabbing"
+          onTouchStart={(e) => {
+            const touch = e.touches[0];
+            const startX = touch.clientX;
+
+            const handleTouchMove = (e: TouchEvent) => {
+              const touch = e.touches[0];
+              const diffX = touch.clientX - startX;
+
+              if (Math.abs(diffX) > 50) {
+                // Threshold for swipe
+                if (diffX > 0) {
+                  handlePrev();
+                } else {
+                  handleNext();
+                }
+                document.removeEventListener("touchmove", handleTouchMove);
+                document.removeEventListener("touchend", handleTouchEnd);
+              }
+            };
+
+            const handleTouchEnd = () => {
+              document.removeEventListener("touchmove", handleTouchMove);
+              document.removeEventListener("touchend", handleTouchEnd);
+            };
+
+            document.addEventListener("touchmove", handleTouchMove);
+            document.addEventListener("touchend", handleTouchEnd);
+          }}
+        >
           {[1, 2, 3].map((index) => (
             <div
               key={index}
@@ -149,6 +189,7 @@ function MobileImageSlider() {
                 className={`object-cover transition-opacity duration-500 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
+                draggable={false}
               />
             </div>
           ))}
@@ -160,7 +201,10 @@ function MobileImageSlider() {
               className={`w-2 h-2 rounded-full transition-all ${
                 currentPair === index ? "bg-pink-500 w-4" : "bg-pink-200"
               }`}
-              onClick={() => setCurrentPair(index)}
+              onClick={() => {
+                setCurrentPair(index);
+                setLastInteraction(Date.now());
+              }}
             />
           ))}
         </div>

@@ -112,16 +112,16 @@ export default function ClientLayout({
         <div className="min-h-screen relative z-10">
           {/* Navigation */}
           <header
-            className={`fixed left-6 right-6 z-50 transition-all duration-300 ${
-              isVisible ? "top-8 opacity-100" : "-top-24 opacity-0"
+            className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+              isVisible ? "top-0 opacity-100" : "-top-24 opacity-0"
             }`}
           >
-            <nav className="bg-white/90 backdrop-blur-md border-2 border-pink-200 rounded-full px-4 md:px-10 py-2 shadow-2xl relative max-w-7xl mx-auto">
-              <div className="flex items-center justify-between relative w-full">
+            <nav className="bg-white border-b border-gray-200 px-2 md:px-10 py-2 shadow-sm relative">
+              <div className="flex items-center justify-between relative w-full max-w-7xl mx-auto">
                 <button
                   ref={menuButtonRef}
                   onClick={toggleMenu}
-                  className="p-3 -ml-2 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  className="p-3 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
                   {isMenuOpen ? (
                     <X className="w-7 h-7" />
@@ -129,14 +129,14 @@ export default function ClientLayout({
                     <Menu className="w-7 h-7" />
                   )}
                 </button>
-                <div className="flex items-center justify-center flex-1 px-2">
+                <div className="flex items-center justify-center flex-1">
                   <a href="/" className="hover:opacity-80 transition-opacity">
                     <Image
                       src="/sugarbloomsbakery.png"
                       alt="Sugar Blooms Logo"
                       width={400}
                       height={400}
-                      className="py-2 w-[400px] md:w-[450px]"
+                      className="py-1 w-[260px] md:w-[600px]"
                     />
                   </a>
                 </div>
