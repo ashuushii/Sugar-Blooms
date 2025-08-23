@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-32 pb-20">
-      <section className="py-16 px-4 relative">
+      <section className="pt-8 pb-18 px-4 relative">
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">

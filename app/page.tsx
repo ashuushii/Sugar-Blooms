@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import "../styles/welcome-animation.css";
 import { Star, Heart, Sparkles, Hand, Coffee, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -219,6 +220,18 @@ export default function Component() {
         >
           <div className="container mx-auto text-center relative z-10">
             <div className="max-w-6xl mx-auto">
+              {/* Welcome Sign */}
+              <div className="pt-0 mb-8">
+                <h1
+                  className="text-4xl md:text-5xl font-extrabold text-pink-600 font-serif tracking-wide animate-welcome"
+                  
+                >
+                  Welcome to Sugar Blooms!
+                </h1>
+                <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto pt-8">
+                  Freshly baked happiness, just for you
+                </p>
+              </div>
               <div
                 className="transform transition-all duration-700 ease-out"
                 style={{
@@ -228,7 +241,6 @@ export default function Component() {
               >
                 <MobileImageSlider />
               </div>
-
               <div className="py-6 md:py-12">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-8">
                   {[

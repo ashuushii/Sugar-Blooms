@@ -129,12 +129,12 @@ export default function ClientLayout({
                 <button
                   ref={menuButtonRef}
                   onClick={toggleMenu}
-                  className="absolute left-0 p-3 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  className="absolute left-0 p-2 md:p-3 -ml-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
                   {isMenuOpen ? (
-                    <X className="w-7 h-7" />
+                    <X className="w-5 h-5 md:w-7 md:h-7" />
                   ) : (
-                    <Menu className="w-7 h-7" />
+                    <Menu className="w-5 h-5 md:w-7 md:h-7" />
                   )}
                 </button>
                 <div className="flex items-center justify-center w-full">
@@ -150,9 +150,9 @@ export default function ClientLayout({
                 </div>
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className="absolute right-0 p-3 -mr-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
+                  className="absolute right-0 p-2 md:p-3 -mr-1 text-pink-600 hover:text-pink-800 transition-colors rounded-full hover:bg-pink-50"
                 >
-                  <Search className="w-7 h-7" />
+                  <Search className="w-5 h-5 md:w-7 md:h-7" />
                 </button>
               </div>
 

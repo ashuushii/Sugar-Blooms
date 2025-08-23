@@ -1,0 +1,24 @@
+.animate-welcome {
+  animation: welcomeFade 1.2s ease-in, welcomePulse 2.5s infinite alternate;
+  display: inline-block;
+}
+
+@keyframes welcomeFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes welcomePulse {
+  from {
+    text-shadow: 0 4px 24px #fbcfe8;
+  }
+  to {
+    text-shadow: 0 8px 32px #f9a8d4;
+  }
+}

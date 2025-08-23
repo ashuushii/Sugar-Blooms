@@ -117,7 +117,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen pt-48 pb-20">
+    <div className="min-h-screen pt-40 pb-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold text-pink-600 text-center mb-8 font-serif">
