@@ -2,27 +2,10 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 
-// This is temporary - in production these should be in environment variables
+// This would typically come from an environment variable
 const ADMIN_USERNAME = "admin";
+// In production, use a properly hashed password stored in a database
 const ADMIN_PASSWORD = "sugarbloomsadmin";
-
-declare module "next-auth" {
-  interface User {
-    role?: string;
-  }
-
-  interface Session {
-    user: User & {
-      role?: string;
-    };
-  }
-}
-
-declare module "next-auth/jwt" {
-  interface JWT {
-    role?: string;
-  }
-}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -32,20 +15,22 @@ export const authOptions: NextAuthOptions = {
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if (!credentials?.username || !credentials?.password) {
           return null;
         }
 
-        // Simple credential check
-        if (credentials.username === ADMIN_USERNAME && 
-            credentials.password === ADMIN_PASSWORD) {
+        // In production, verify against a database
+        if (
+          credentials.username === ADMIN_USERNAME &&
+          credentials.password === ADMIN_PASSWORD
+        ) {
           return {
             id: "1",
             name: "Admin",
             email: "admin@sugarbloooms.com",
-            role: "admin"
-          } as any;
+            role: "admin",
+          };
         }
 
         return null;
@@ -54,6 +39,7 @@ export const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/admin",
+    error: "/admin",
   },
   callbacks: {
     async jwt({ token, user }) {
@@ -64,7 +50,7 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (session?.user) {
-        session.user.role = token.role;
+        (session.user as any).role = token.role;
       }
       return session;
     },
