@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
-import { Star, Heart, Sparkles, Hand, Coffee } from "lucide-react";
+import { Star, Heart, Sparkles, Hand, Coffee, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PostcodeDistanceChecker from "@/components/postcode-distance-checker";
@@ -281,7 +281,7 @@ export default function Component() {
                         "Made with British-sourced ingredients, organic British flour, and free-range eggs for the perfect taste",
                     },
                     {
-                      icon: <Coffee className="w-8 h-8 text-pink-400" />,
+                      icon: <Check className="w-8 h-8 text-pink-400" />,
                       title: "Made Fresh Daily",
                       description:
                         "Baked to order, in our kitchen for maximum flavor and freshness",
