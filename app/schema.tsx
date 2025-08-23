@@ -2,89 +2,87 @@ export const businessSchema = {
   "@context": "https://schema.org",
   "@type": "Bakery",
   "@id": "https://sugarblooms.co.uk",
-  name: "Sugar Blooms",
-  image: {
+  "name": "Sugar Blooms",
+  "image": {
     "@type": "ImageObject",
-    url: "https://sugarblooms.co.uk/sugarblooms.png",
-    width: "512",
-    height: "512",
+    "url": "https://sugarblooms.co.uk/sugarblooms.png",
+    "width": "512",
+    "height": "512"
   },
-  url: "https://sugarblooms.co.uk",
-  telephone: "+447907169798",
-  priceRange: "££",
-  address: {
+  "url": "https://sugarblooms.co.uk",
+  "telephone": "+447907169798",
+  "priceRange": "££",
+  "address": {
     "@type": "PostalAddress",
-    addressLocality: "London",
-    addressRegion: "Greater London",
-    addressCountry: "GB",
+    "addressLocality": "London",
+    "addressRegion": "Greater London",
+    "addressCountry": "GB"
   },
-  geo: {
+  "geo": {
     "@type": "GeoCoordinates",
-    latitude: 51.5948,
-    longitude: -0.2414,
+    "latitude": "51.5074",
+    "longitude": "-0.1278"
   },
-  description:
-    "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic.",
-  hasMenu: {
+  "description": "Sugar Blooms is a London-based bakery specialising in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic.",
+  "hasMenu": {
     "@type": "Menu",
-    hasMenuSection: [
+    "hasMenuSection": [
       {
         "@type": "MenuSection",
-        name: "Cupcakes",
-        hasMenuItem: [
+        "name": "Cupcakes",
+        "hasMenuItem": [
           {
             "@type": "MenuItem",
-            name: "Vanilla Cupcakes",
-            description: "Classic vanilla cupcakes with buttercream frosting",
+            "name": "Vanilla Cupcakes",
+            "description": "Classic vanilla cupcakes with buttercream frosting"
           },
           {
             "@type": "MenuItem",
-            name: "Chocolate Cupcakes",
-            description: "Rich chocolate cupcakes with chocolate frosting",
+            "name": "Chocolate Cupcakes",
+            "description": "Rich chocolate cupcakes with chocolate frosting"
           },
           {
             "@type": "MenuItem",
-            name: "Strawberry Cupcakes",
-            description:
-              "Fresh strawberry cupcakes with strawberry buttercream",
-          },
-        ],
-      },
-    ],
+            "name": "Strawberry Cupcakes",
+            "description": "Fresh strawberry cupcakes with strawberry buttercream"
+          }
+        ]
+      }
+    ]
   },
-  openingHoursSpecification: {
+  "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
+    "dayOfWeek": [
       "Monday",
       "Tuesday",
       "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday",
+      "Saturday"
     ],
-    opens: "09:00",
-    closes: "18:00",
+    "opens": "09:00",
+    "closes": "18:00"
   },
-  sameAs: [
+  "sameAs": [
     "https://instagram.com/sugarbloomsco",
     "https://tiktok.com/@sugarbloomsco",
-    "https://www.facebook.com/profile.php?id=61578928634971",
-  ],
+    "https://www.facebook.com/profile.php?id=61578928634971"
+  ]
 };
 
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://sugarblooms.co.uk/#website",
-  url: "https://sugarblooms.co.uk",
-  name: "Sugar Blooms",
-  description: "Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
-  publisher: {
+  "url": "https://sugarblooms.co.uk",
+  "name": "Sugar Blooms",
+  "description": "Handcrafted Cupcakes London – Boutique Pink Cupcake Bakery",
+  "publisher": {
     "@type": "Organization",
-    name: "Sugar Blooms",
-    logo: {
+    "name": "Sugar Blooms",
+    "logo": {
       "@type": "ImageObject",
-      url: "https://sugarblooms.co.uk/sugarblooms.png",
-    },
-  },
+      "url": "https://sugarblooms.co.uk/sugarblooms.png"
+    }
+  }
 };

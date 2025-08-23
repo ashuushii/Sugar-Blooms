@@ -8,9 +8,6 @@ import { Menu, X, Instagram, MessageCircle } from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState, useEffect, useRef } from "react";
-import { Breadcrumb } from "@/components/Breadcrumb";
-import { SeoHead } from "@/components/SeoHead";
-import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -75,7 +72,6 @@ export default function ClientLayout({
   return (
     <html lang="en">
       <head>
-        <SeoHead />
         <link
           rel="apple-touch-icon"
           href="/apple-touch-icon.png"
@@ -252,10 +248,7 @@ export default function ClientLayout({
               </div>
             </nav>
           </header>
-          <div className="pt-32">
-            <Breadcrumb />
-            {children}
-          </div>
+          {children}
           <footer className="bg-pink-100/90 backdrop-blur-sm py-12 px-4 border-t-2 border-pink-200">
             <div className="container mx-auto">
               <div className="grid md:grid-cols-2 gap-8 mb-12">
