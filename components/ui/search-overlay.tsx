@@ -186,76 +186,26 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                       ))}
                     </div>
                   ) : (
-                    <div className="py-8 px-4">
-                      <div className="text-center mb-8">
-                        <Search className="w-12 h-12 mx-auto text-pink-200 mb-4" />
-                        <p className="text-pink-400 font-medium text-lg mb-2">No exact matches found</p>
-                        <p className="text-sm text-pink-300">
-                          Here are some similar results that might help
-                        </p>
-                      </div>
-
-                      <div className="space-y-6">
-                        {/* Similar Results Section */}
-                        <div className="space-y-4">
-                          {searchData
-                            .filter(item => 
-                              item.title.toLowerCase().includes(searchQuery.toLowerCase().split(' ')[0]) ||
-                              item.description.toLowerCase().includes(searchQuery.toLowerCase())
-                            )
-                            .slice(0, 3)
-                            .map((result) => (
-                              <a
-                                key={result.url}
-                                href={result.url}
-                                className="block p-3 rounded-lg bg-pink-50/30 hover:bg-pink-50/50 transition-colors"
-                              >
-                                <div className="flex items-start gap-3">
-                                  {getCategoryIcon(result.category)}
-                                  <div>
-                                    <div className="font-medium text-pink-600">{result.title}</div>
-                                    <p className="text-sm text-pink-400 mt-1 line-clamp-2">{result.description}</p>
-                                  </div>
-                                </div>
-                              </a>
-                            ))}
-                        </div>
-
-                        {/* Divider */}
-                        <div className="relative">
-                          <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-pink-100"></div>
-                          </div>
-                          <div className="relative flex justify-center text-sm">
-                            <span className="px-2 text-pink-400 bg-white">or</span>
-                          </div>
-                        </div>
-
-                        {/* FAQ and Support Section */}
-                        <div className="text-center space-y-4">
-                          <a
-                            href="/faq"
-                            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-pink-50 hover:bg-pink-100 text-pink-600 rounded-lg transition-colors"
+                    <div className="text-center py-12">
+                      <Search className="w-12 h-12 mx-auto text-pink-200 mb-4" />
+                      <p className="text-pink-400 font-medium mb-2">No results found</p>
+                      <p className="text-sm text-pink-300">
+                        Try different keywords or check our{" "}
+                        <a href="/faq" className="underline hover:text-pink-400 transition-colors">
+                          FAQ page
+                        </a>
+                      </p>
+                      <div className="mt-6 flex justify-center gap-2">
+                        <span className="text-pink-300 text-sm">Popular searches:</span>
+                        {["cupcakes", "delivery", "allergens"].map((term) => (
+                          <button
+                            key={term}
+                            onClick={() => setSearchQuery(term)}
+                            className="px-3 py-1 text-sm text-pink-500 bg-pink-50/50 rounded-full hover:bg-pink-50 transition-colors"
                           >
-                            <HelpCircle className="w-4 h-4" />
-                            <span>Check our FAQ page</span>
-                          </a>
-                          
-                          <div className="text-sm text-pink-300">
-                            Popular searches:
-                            <div className="flex flex-wrap justify-center gap-2 mt-2">
-                              {["cupcakes", "delivery", "allergens", "custom orders"].map((term) => (
-                                <button
-                                  key={term}
-                                  onClick={() => setSearchQuery(term)}
-                                  className="px-3 py-1 text-sm text-pink-500 bg-pink-50/50 rounded-full hover:bg-pink-50 transition-colors"
-                                >
-                                  {term}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
+                            {term}
+                          </button>
+                        ))}
                       </div>
                     </div>
                   )}

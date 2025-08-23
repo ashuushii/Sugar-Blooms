@@ -119,7 +119,7 @@ export default function ClientLayout({
             }`}
           >
             <div className="bg-gradient-to-r from-pink-400 to-rose-400 text-white text-center py-1 text-sm font-medium">
-              🎉 Grand Opening: September 1st, 2025 ｜ 20% off for your first order! 🎉
+              Grand Opening: September 1st, 2025 ｜ 20% off for your first order!
             </div>
             <nav className="bg-white border-b border-gray-200 px-2 md:px-10 py-1 shadow-sm relative">
               <div className="flex items-center relative w-full max-w-7xl mx-auto">
@@ -139,9 +139,9 @@ export default function ClientLayout({
                     <Image
                       src="/sugarbloomsbakery.png"
                       alt="Sugar Blooms Logo"
-                      width={400}
-                      height={400}
-                      className="py-1 w-[230px] md:w-[400px]"
+                      width={270}
+                      height={270}
+                      className="py-1 w-[270px]"
                     />
                   </a>
                 </div>
