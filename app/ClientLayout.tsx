@@ -347,6 +347,12 @@ export default function ClientLayout({
                     >
                       FAQs + T&Cs
                     </a>
+                    <a
+                      href="/calculator"
+                      className="text-pink-700 hover:text-pink-800 transition-colors text-lg"
+                    >
+                      Calculator
+                    </a>
                   </nav>
                 </div>
               </div>

@@ -222,10 +222,7 @@ export default function Component() {
             <div className="max-w-6xl mx-auto">
               {/* Welcome Sign */}
               <div className="pt-0 mb-8">
-                <h1
-                  className="text-4xl md:text-5xl font-extrabold text-pink-600 font-serif tracking-wide animate-welcome"
-                  
-                >
+                <h1 className="text-4xl md:text-5xl font-extrabold text-pink-600 font-serif tracking-wide animate-welcome">
                   Welcome to Sugar Blooms!
                 </h1>
                 <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto pt-8">

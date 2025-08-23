@@ -19,7 +19,7 @@ export default function AboutPage() {
               Where Dreams Meet Frosting and Every Bite Tells a Story
             </p>
             <div className="flex items-center justify-center gap-4 mb-4"></div>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 mb-12">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
                 We believe in the power of sweetness to bring people together.
@@ -43,14 +43,14 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
             <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
-              <h2 className="text-3xl font-bold text-pink-600 mb-4 font-serif">
+              <h2 className="text-2xl font-bold text-pink-600 mb-4 font-serif">
                 Our Story
               </h2>
-              <p className="text-base md:text-lg text-pink-700 leading-relaxed mb-4">
+              <p className="text-base md:text-s text-pink-700 leading-relaxed mb-4">
                 What began as a simple hobby in my cozy London kitchen quickly
                 became a passion for creating joy, one cupcake at a time.
               </p>
-              <p className="text-base md:text-lg text-pink-700 leading-relaxed">
+              <p className="text-base md:text-s text-pink-700 leading-relaxed">
                 Every swirl of buttercream, every delicate bow, and every
                 sprinkle is placed with intention and love.
               </p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif">
                 Our Mission
               </h3>
-              <p className="text-base md:text-lg text-rose-700 leading-relaxed">
+              <p className="text-base md:text-s text-rose-700 leading-relaxed">
                 To turn everyday moments into celebrations and make your day a
                 little brighter, a lot sweeter.
               </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-6">
               <Sparkles className="w-6 h-6 text-pink-400" />
-              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
+              <h2 className="text-3xl md:text-3xl font-bold text-pink-600 font-serif">
                 Why Sugar Blooms?
               </h2>
               <Sparkles className="w-6 h-6 text-pink-400" />
@@ -80,7 +80,7 @@ export default function AboutPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mt-12">
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif flex items-center gap-2">
+                <h3 className="text-xl font-bold text-pink-600 mb-4 font-serif flex items-center gap-2">
                   <Heart className="w-6 h-6 fill-pink-600" />
                   Our Values
                 </h3>
@@ -105,16 +105,16 @@ export default function AboutPage() {
               </div>
 
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif flex items-center gap-2">
+                <h3 className="text-xl font-bold text-pink-600 mb-4 font-serif flex items-center gap-2">
                   <Crown className="w-6 h-6 text-pink-600" />
                   What Makes Us Special
                 </h3>
-                <p className="text-base md:text-lg text-pink-700 leading-relaxed mb-4">
+                <p className="text-base md:text-s text-pink-700 leading-relaxed mb-4">
                   In a world of mass production, we believe in the magic of the
                   handmade. Each cupcake is a tiny work of art, crafted with the
                   same care you'd put into a gift for someone you love.
                 </p>
-                <p className="text-base md:text-lg text-pink-700 leading-relaxed">
+                <p className="text-base md:text-s text-pink-700 leading-relaxed">
                   Because that's exactly what it is - a little gift of sweetness
                   to brighten your day.
                 </p>
