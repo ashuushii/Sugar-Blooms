@@ -59,7 +59,10 @@ export default function ClientLayout({
       if (currentScrollY < lastScrollY) {
         // Scrolling up
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > window.innerHeight * 0.25) {
+      } else if (
+        currentScrollY > lastScrollY &&
+        currentScrollY > window.innerHeight * 0.25
+      ) {
         // Scrolling down and past 25% of viewport height
         setIsVisible(false);
       }
@@ -119,7 +122,7 @@ export default function ClientLayout({
             }`}
           >
             <div className="bg-gradient-to-r from-pink-400 to-rose-400 text-white text-center py-1 text-sm font-medium">
-              Grand Opening: September 1st, 2025 ｜ 20% off for your first order!
+              Grand Opening: September 1st, 2025 ｜ 20% off first orders!
             </div>
             <nav className="bg-white border-b border-gray-200 px-2 md:px-10 py-1 shadow-sm relative">
               <div className="flex items-center relative w-full max-w-7xl mx-auto">
@@ -387,7 +390,10 @@ export default function ClientLayout({
             </div>
           </footer>
           <SpeedInsights />
-          <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+          <SearchOverlay
+            isOpen={isSearchOpen}
+            onClose={() => setIsSearchOpen(false)}
+          />
         </div>
       </body>
     </html>

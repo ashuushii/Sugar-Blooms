@@ -53,16 +53,18 @@ const initialSubmissions: FAQSubmission[] = [
 
 export default function AdminFAQPage() {
   const [submissions, setSubmissions] = useState(initialSubmissions);
-  const [selectedSubmission, setSelectedSubmission] = useState<FAQSubmission | null>(null);
+  const [selectedSubmission, setSelectedSubmission] =
+    useState<FAQSubmission | null>(null);
   const [showReviewDialog, setShowReviewDialog] = useState(false);
   const [answer, setAnswer] = useState("");
 
-  const handleStatusUpdate = async (id: string, status: "approved" | "rejected") => {
+  const handleStatusUpdate = async (
+    id: string,
+    status: "approved" | "rejected"
+  ) => {
     // Here you would typically update the status in your database
     setSubmissions(
-      submissions.map((sub) =>
-        sub.id === id ? { ...sub, status } : sub
-      )
+      submissions.map((sub) => (sub.id === id ? { ...sub, status } : sub))
     );
   };
 
@@ -72,7 +74,7 @@ export default function AdminFAQPage() {
       // 1. Update the submission status
       // 2. Create a new FAQ entry with the question and answer
       // 3. Notify the user their question was approved
-      
+
       await handleStatusUpdate(selectedSubmission.id, "approved");
       setShowReviewDialog(false);
       setAnswer("");
@@ -147,7 +149,9 @@ export default function AdminFAQPage() {
                               size="sm"
                               variant="outline"
                               className="text-red-600 border-red-200 hover:bg-red-50"
-                              onClick={() => handleStatusUpdate(submission.id, "rejected")}
+                              onClick={() =>
+                                handleStatusUpdate(submission.id, "rejected")
+                              }
                             >
                               Reject
                             </Button>

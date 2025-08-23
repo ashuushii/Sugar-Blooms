@@ -10,7 +10,7 @@ export default function AdminDashboard() {
   const [passwordForm, setPasswordForm] = useState({
     currentPassword: "",
     newPassword: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
   const [passwordError, setPasswordError] = useState("");
   const [passwordSuccess, setPasswordSuccess] = useState("");
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
     setPasswordForm({
       currentPassword: "",
       newPassword: "",
-      confirmPassword: ""
+      confirmPassword: "",
     });
     setShowChangePassword(false);
   };
@@ -90,7 +90,9 @@ export default function AdminDashboard() {
                 <p className="text-2xl font-bold text-pink-700">0</p>
               </div>
               <div className="bg-pink-50 rounded-xl p-4">
-                <h3 className="text-pink-600 font-medium mb-2">Pending Orders</h3>
+                <h3 className="text-pink-600 font-medium mb-2">
+                  Pending Orders
+                </h3>
                 <p className="text-2xl font-bold text-pink-700">0</p>
               </div>
               <div className="bg-pink-50 rounded-xl p-4">

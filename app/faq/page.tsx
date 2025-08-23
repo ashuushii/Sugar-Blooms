@@ -11,19 +11,21 @@ import {
 } from "@/components/ui/accordion";
 import { useState } from "react";
 
-const ClickableAccordionContent = ({ children }: { children: React.ReactNode }) => (
-  <div 
+const ClickableAccordionContent = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => (
+  <div
     onClick={(e) => {
-      const trigger = e.currentTarget.closest('[data-state]');
+      const trigger = e.currentTarget.closest("[data-state]");
       if (trigger) {
         (trigger as HTMLElement).click();
       }
     }}
     className="cursor-pointer"
   >
-    <AccordionContent>
-      {children}
-    </AccordionContent>
+    <AccordionContent>{children}</AccordionContent>
   </div>
 );
 
@@ -40,12 +42,13 @@ interface ClickableAccordionProps {
   onToggle: (value: string) => void;
 }
 
-const ClickableAccordion: React.FC<ClickableAccordionProps> = ({ children, value, onToggle }) => {
+const ClickableAccordion: React.FC<ClickableAccordionProps> = ({
+  children,
+  value,
+  onToggle,
+}) => {
   return (
-    <div 
-      className="cursor-pointer"
-      onClick={() => onToggle(value)}
-    >
+    <div className="cursor-pointer" onClick={() => onToggle(value)}>
       {children}
     </div>
   );
@@ -103,7 +106,7 @@ export default function FAQPage() {
 
       setShowSuccess(true);
       setFormData({ name: "", email: "", question: "" });
-      
+
       // Hide success message after 5 seconds
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (error) {
@@ -123,7 +126,12 @@ export default function FAQPage() {
 
           {/* FAQ Section */}
           <section className="mb-16">
-            <Accordion type="multiple" value={openItems} onValueChange={setOpenItems} className="w-full space-y-4">
+            <Accordion
+              type="multiple"
+              value={openItems}
+              onValueChange={setOpenItems}
+              className="w-full space-y-4"
+            >
               {initialFaqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
@@ -132,7 +140,9 @@ export default function FAQPage() {
                   onClick={(e) => {
                     const newValue = `item-${index}`;
                     if (openItems.includes(newValue)) {
-                      setOpenItems(openItems.filter(item => item !== newValue));
+                      setOpenItems(
+                        openItems.filter((item) => item !== newValue)
+                      );
                     } else {
                       setOpenItems([...openItems, newValue]);
                     }
@@ -154,14 +164,19 @@ export default function FAQPage() {
             <h2 className="text-2xl font-bold text-pink-600 mb-6 font-serif text-center">
               Terms and Conditions
             </h2>
-            <Accordion type="multiple" value={openItems} onValueChange={setOpenItems} className="w-full space-y-4">
+            <Accordion
+              type="multiple"
+              value={openItems}
+              onValueChange={setOpenItems}
+              className="w-full space-y-4"
+            >
               <AccordionItem
                 value="orders"
                 className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-2xl px-4 cursor-pointer"
                 onClick={() => {
                   const value = "orders";
                   if (openItems.includes(value)) {
-                    setOpenItems(openItems.filter(item => item !== value));
+                    setOpenItems(openItems.filter((item) => item !== value));
                   } else {
                     setOpenItems([...openItems, value]);
                   }
@@ -174,7 +189,9 @@ export default function FAQPage() {
                   <ul className="list-disc pl-5 space-y-2">
                     <li>Minimum order of 4 cupcakes required</li>
                     <li>24-48 hours notice required for all orders</li>
-                    <li>Collection only from our Colindale, Barnet NW9 location</li>
+                    <li>
+                      Collection only from our Colindale, Barnet NW9 location
+                    </li>
                     <li>Order confirmation is subject to availability</li>
                   </ul>
                 </AccordionContent>
@@ -186,7 +203,7 @@ export default function FAQPage() {
                 onClick={() => {
                   const value = "payment";
                   if (openItems.includes(value)) {
-                    setOpenItems(openItems.filter(item => item !== value));
+                    setOpenItems(openItems.filter((item) => item !== value));
                   } else {
                     setOpenItems([...openItems, value]);
                   }
@@ -198,7 +215,10 @@ export default function FAQPage() {
                 <AccordionContent className="text-pink-700">
                   <ul className="list-disc pl-5 space-y-2">
                     <li>Full payment required to confirm orders</li>
-                    <li>Cancellations accepted up to 24 hours before collection time</li>
+                    <li>
+                      Cancellations accepted up to 24 hours before collection
+                      time
+                    </li>
                     <li>Refunds will be processed within 3-5 working days</li>
                   </ul>
                 </AccordionContent>
@@ -210,7 +230,7 @@ export default function FAQPage() {
                 onClick={() => {
                   const value = "allergens";
                   if (openItems.includes(value)) {
-                    setOpenItems(openItems.filter(item => item !== value));
+                    setOpenItems(openItems.filter((item) => item !== value));
                   } else {
                     setOpenItems([...openItems, value]);
                   }
@@ -221,7 +241,10 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent className="text-pink-700">
                   <ul className="list-disc pl-5 space-y-2">
-                    <li>Our kitchen handles common allergens including nuts, dairy, eggs, and gluten</li>
+                    <li>
+                      Our kitchen handles common allergens including nuts,
+                      dairy, eggs, and gluten
+                    </li>
                     <li>We cannot guarantee allergen-free products</li>
                     <li>Please inform us of any allergies when ordering</li>
                   </ul>
@@ -234,7 +257,7 @@ export default function FAQPage() {
                 onClick={() => {
                   const value = "products";
                   if (openItems.includes(value)) {
-                    setOpenItems(openItems.filter(item => item !== value));
+                    setOpenItems(openItems.filter((item) => item !== value));
                   } else {
                     setOpenItems([...openItems, value]);
                   }
@@ -259,7 +282,7 @@ export default function FAQPage() {
                 onClick={() => {
                   const value = "quality";
                   if (openItems.includes(value)) {
-                    setOpenItems(openItems.filter(item => item !== value));
+                    setOpenItems(openItems.filter((item) => item !== value));
                   } else {
                     setOpenItems([...openItems, value]);
                   }
@@ -272,15 +295,18 @@ export default function FAQPage() {
                   <ul className="list-disc pl-5 space-y-2">
                     <li>All products are made with high-quality ingredients</li>
                     <li>Please check your order upon collection</li>
-                    <li>Any quality concerns must be reported within 2 hours of collection</li>
+                    <li>
+                      Any quality concerns must be reported within 2 hours of
+                      collection
+                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
 
             <div className="mt-6 text-sm text-pink-600 italic text-center">
-              By placing an order with Sugar Blooms, you agree to these terms and conditions.
-              These terms are subject to change without notice.
+              By placing an order with Sugar Blooms, you agree to these terms
+              and conditions. These terms are subject to change without notice.
             </div>
           </section>
 
@@ -289,10 +315,11 @@ export default function FAQPage() {
             <h2 className="text-2xl font-bold text-pink-600 mb-6 font-serif">
               Ask a Question
             </h2>
-            
+
             {showSuccess && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700">
-                Thank you for your question! We'll review it and add it to our FAQs if it can help others.
+                Thank you for your question! We'll review it and add it to our
+                FAQs if it can help others.
               </div>
             )}
 

@@ -34,13 +34,13 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       switch (e.key) {
         case "ArrowDown":
           e.preventDefault();
-          setSelectedIndex(prev => 
+          setSelectedIndex((prev) =>
             Math.min(prev + 1, searchResults.length - 1)
           );
           break;
         case "ArrowUp":
           e.preventDefault();
-          setSelectedIndex(prev => Math.max(prev - 1, 0));
+          setSelectedIndex((prev) => Math.max(prev - 1, 0));
           break;
         case "Enter":
           e.preventDefault();
@@ -71,7 +71,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     if (container && selectedElement) {
       selectedElement.scrollIntoView({
         block: "nearest",
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   }, [selectedIndex]);
@@ -92,7 +92,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
@@ -100,7 +100,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
         }
       }}
     >
-      <div 
+      <div
         className="flex min-h-screen items-start justify-center px-4 pt-16 md:pt-32"
         onClick={(e) => {
           if (e.target === e.currentTarget) {
@@ -129,7 +129,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="p-4">
               {searchQuery ? (
                 <div ref={containerRef}>
@@ -176,10 +176,16 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                                 </div>
                               )}
                             </div>
-                            <div className={`hidden md:flex items-center text-pink-400 transition-opacity duration-200 ${
-                              index === selectedIndex ? 'opacity-100' : 'opacity-0'
-                            }`}>
-                              <kbd className="px-2 py-1 text-xs font-sans font-semibold bg-pink-50 rounded-lg">↵</kbd>
+                            <div
+                              className={`hidden md:flex items-center text-pink-400 transition-opacity duration-200 ${
+                                index === selectedIndex
+                                  ? "opacity-100"
+                                  : "opacity-0"
+                              }`}
+                            >
+                              <kbd className="px-2 py-1 text-xs font-sans font-semibold bg-pink-50 rounded-lg">
+                                ↵
+                              </kbd>
                             </div>
                           </div>
                         </a>
@@ -188,15 +194,22 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                   ) : (
                     <div className="text-center py-12">
                       <Search className="w-12 h-12 mx-auto text-pink-200 mb-4" />
-                      <p className="text-pink-400 font-medium mb-2">No results found</p>
+                      <p className="text-pink-400 font-medium mb-2">
+                        No results found
+                      </p>
                       <p className="text-sm text-pink-300">
                         Try different keywords or check our{" "}
-                        <a href="/faq" className="underline hover:text-pink-400 transition-colors">
+                        <a
+                          href="/faq"
+                          className="underline hover:text-pink-400 transition-colors"
+                        >
                           FAQ page
                         </a>
                       </p>
                       <div className="mt-6 flex justify-center gap-2">
-                        <span className="text-pink-300 text-sm">Popular searches:</span>
+                        <span className="text-pink-300 text-sm">
+                          Popular searches:
+                        </span>
                         {["cupcakes", "delivery", "allergens"].map((term) => (
                           <button
                             key={term}
@@ -216,7 +229,9 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                     <p className="text-pink-400">Start typing to search...</p>
                   </div>
                   <div className="border-t border-pink-100/50 pt-6">
-                    <div className="text-sm font-medium text-pink-400 mb-4 px-1">Quick Links</div>
+                    <div className="text-sm font-medium text-pink-400 mb-4 px-1">
+                      Quick Links
+                    </div>
                     <div className="grid grid-cols-2 gap-3">
                       <a
                         href="/cupcakes"
@@ -225,8 +240,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="flex items-center gap-3">
                           <Cookie className="w-6 h-6 text-pink-400 group-hover:scale-110 transition-transform duration-300" />
                           <div>
-                            <span className="text-pink-600 font-medium">Our Cupcakes</span>
-                            <p className="text-pink-400 text-sm mt-0.5">Browse our delicious treats</p>
+                            <span className="text-pink-600 font-medium">
+                              Our Cupcakes
+                            </span>
+                            <p className="text-pink-400 text-sm mt-0.5">
+                              Browse our delicious treats
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -237,8 +256,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="flex items-center gap-3">
                           <FileText className="w-6 h-6 text-pink-400 group-hover:scale-110 transition-transform duration-300" />
                           <div>
-                            <span className="text-pink-600 font-medium">Recipes</span>
-                            <p className="text-pink-400 text-sm mt-0.5">Learn to bake with us</p>
+                            <span className="text-pink-600 font-medium">
+                              Recipes
+                            </span>
+                            <p className="text-pink-400 text-sm mt-0.5">
+                              Learn to bake with us
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -249,8 +272,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="flex items-center gap-3">
                           <Phone className="w-6 h-6 text-pink-400 group-hover:scale-110 transition-transform duration-300" />
                           <div>
-                            <span className="text-pink-600 font-medium">Contact</span>
-                            <p className="text-pink-400 text-sm mt-0.5">Get in touch with us</p>
+                            <span className="text-pink-600 font-medium">
+                              Contact
+                            </span>
+                            <p className="text-pink-400 text-sm mt-0.5">
+                              Get in touch with us
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -261,8 +288,12 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                         <div className="flex items-center gap-3">
                           <HelpCircle className="w-6 h-6 text-pink-400 group-hover:scale-110 transition-transform duration-300" />
                           <div>
-                            <span className="text-pink-600 font-medium">FAQs</span>
-                            <p className="text-pink-400 text-sm mt-0.5">Find quick answers</p>
+                            <span className="text-pink-600 font-medium">
+                              FAQs
+                            </span>
+                            <p className="text-pink-400 text-sm mt-0.5">
+                              Find quick answers
+                            </p>
                           </div>
                         </div>
                       </a>
@@ -270,8 +301,6 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                   </div>
                 </div>
               )}
-              
-
             </div>
           </div>
         </div>

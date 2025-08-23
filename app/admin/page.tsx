@@ -11,7 +11,7 @@ export default function AdminLogin() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // This is a simple example. In a real application, you should:
     // 1. Use proper authentication (like NextAuth.js)
     // 2. Never store credentials in the code
@@ -41,7 +41,10 @@ export default function AdminLogin() {
 
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="space-y-2">
-            <label htmlFor="username" className="text-sm font-medium text-pink-600">
+            <label
+              htmlFor="username"
+              className="text-sm font-medium text-pink-600"
+            >
               Username
             </label>
             <Input
@@ -55,7 +58,10 @@ export default function AdminLogin() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-pink-600">
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-pink-600"
+            >
               Password
             </label>
             <Input
