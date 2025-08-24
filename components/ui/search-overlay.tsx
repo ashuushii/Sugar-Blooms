@@ -139,10 +139,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   }
 
   // Ensure 'location' is always suggested as a top result for relevant queries
-  if (
-    debouncedQuery.toLowerCase().includes("lo") ||
-    debouncedQuery.toLowerCase().includes("find")
-  ) {
+  if (debouncedQuery.toLowerCase().includes("find")) {
     searchResults.unshift({
       title: "Location",
       description: "Find us on Google Maps",

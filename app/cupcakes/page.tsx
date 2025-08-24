@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 export default function CupcakesPage() {
   const cupcakeCategories = [
     {
+      title: "",
+      description: "",
       cupcakes: [
         {
           name: "Bow Tie Elegance",
@@ -47,7 +49,7 @@ export default function CupcakesPage() {
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
               <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
-                Our Cupcakes
+                Our Cupcake Selection
               </h1>
             </div>
             <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">

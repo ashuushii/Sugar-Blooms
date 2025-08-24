@@ -32,13 +32,6 @@ export default function AboutPage() {
       <div className="container mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center gap-8 mb-20">
           <div className="relative max-w-2xl mx-auto">
-            <Image
-              src="/baking.png"
-              alt="anime style illustration of a baker decorating cupcakes"
-              width={400}
-              height={400}
-              className="w-full max-w-[300px] md:max-w-[400px] aspect-square rounded-3xl shadow-2xl border-4 border-white relative z-0"
-            />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
