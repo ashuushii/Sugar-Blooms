@@ -86,5 +86,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    cursor: url('/custom-pink-cursor.png'), auto;
+  }
+  a, button {
+    cursor: url('/custom-pink-pointer.png'), pointer;
   }
 }

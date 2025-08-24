@@ -12,8 +12,19 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [notificationPosition, setNotificationPosition] = useState({ x: 0, y: 0 });
+
+  const handleEmailCopy = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    navigator.clipboard.writeText("hello@sugarblooms.co.uk");
+    setNotificationPosition({ x: event.clientX, y: event.clientY });
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000); // Reset after 2 seconds
+  };
+
   return (
     <div className="min-h-screen pt-32 pb-20">
       <section className="py-16 px-4 relative">
@@ -53,37 +64,51 @@ export default function ContactPage() {
               </div>
 
               <div className="p-8 space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-pink-50 rounded-2xl border border-pink-200">
-                  <div className="bg-pink-200 p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-pink-600" />
+                <a
+                  onClick={handleEmailCopy}
+                  className="block bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
+                >
+                  <div className="flex items-center space-x-4 p-4">
+                    <div className="bg-pink-200 p-3 rounded-full">
+                      <Mail className="w-6 h-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-pink-600">Email Us</h3>
+                      <p className="text-pink-700">hello@sugarblooms.co.uk</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-pink-600">Email Us</h3>
-                    <p className="text-pink-700">hello@sugarblooms.co.uk</p>
-                  </div>
-                </div>
+                </a>
 
-                <div className="flex items-center space-x-4 p-4 bg-pink-50 rounded-2xl border border-pink-200">
-                  <div className="bg-pink-200 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-pink-600" />
+                <a
+                  href="https://maps.app.goo.gl/m5DiwzKhFmfDiVMm7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                >
+                  <div className="flex items-center space-x-4 p-4">
+                    <div className="bg-pink-200 p-3 rounded-full">
+                      <MapPin className="w-6 h-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-pink-600">Location</h3>
+                      <p className="text-pink-700">London, UK (Collection Only)</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-pink-600">Location</h3>
-                    <p className="text-pink-700">
-                      London, UK (Collection Only)
-                    </p>
-                  </div>
-                </div>
+                </a>
 
-                <div className="flex items-center space-x-4 p-4 bg-pink-50 rounded-2xl border border-pink-200">
-                  <div className="bg-pink-200 p-3 rounded-full">
-                    <Clock className="w-6 h-6 text-pink-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-pink-600">Order Notice</h3>
-                    <p className="text-pink-700">
-                      24-48 hours advance notice required
-                    </p>
+                <div
+                  className="block bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                >
+                  <div className="flex items-center space-x-4 p-4">
+                    <div className="bg-pink-200 p-3 rounded-full">
+                      <Clock className="w-6 h-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-pink-600">Order Notice</h3>
+                      <p className="text-pink-700">
+                        24-48 hours advance notice required
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -239,6 +264,15 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {emailCopied && (
+        <div
+          className="fixed bg-pink-600 text-white py-2 px-4 rounded-lg shadow-lg"
+          style={{ top: notificationPosition.y, left: notificationPosition.x, transform: "translate(-50%, -100%)" }}
+        >
+          Email copied to clipboard!
+        </div>
+      )}
     </div>
   );
 }

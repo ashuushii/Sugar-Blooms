@@ -313,12 +313,27 @@ export default function Component() {
                     <Card
                       key={index}
                       className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                      style={{ cursor: feature.url ? "pointer" : "default" }}
                     >
-                      <a
-                        href={feature.url}
-                        target="_blank" // Open in new tab
-                        rel="noopener noreferrer" // Security best practice
-                      >
+                      {feature.url ? (
+                        <a
+                          href={feature.url}
+                          target="_blank" // Open in new tab
+                          rel="noopener noreferrer" // Security best practice
+                        >
+                          <CardContent className="p-2 md:p-4 lg:p-8 text-center">
+                            <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                              {feature.icon}
+                            </div>
+                            <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
+                              {feature.title}
+                            </h3>
+                            <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
+                              {feature.description}
+                            </p>
+                          </CardContent>
+                        </a>
+                      ) : (
                         <CardContent className="p-2 md:p-4 lg:p-8 text-center">
                           <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                             {feature.icon}
@@ -330,7 +345,7 @@ export default function Component() {
                             {feature.description}
                           </p>
                         </CardContent>
-                      </a>
+                      )}
                     </Card>
                   ))}
                 </div>
