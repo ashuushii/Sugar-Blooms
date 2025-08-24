@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-pink-600">Email Us</h3>
-                    <p className="text-pink-700">contact@sugarblooms.co.uk</p>
+                    <p className="text-pink-700">hello@sugarblooms.co.uk</p>
                   </div>
                 </div>
 

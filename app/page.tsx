@@ -246,13 +246,13 @@ export default function Component() {
                     href="/cupcakes"
                     className="bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
                   >
-                    Explore Cupcakes
+                    Explore
                   </a>
                   <a
                     href="/contact"
                     className="bg-pink-50 text-pink-600 hover:text-pink-800 border border-pink-200 font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
                   >
-                    Contact Us
+                    Contact
                   </a>
                 </div>
               </div>
