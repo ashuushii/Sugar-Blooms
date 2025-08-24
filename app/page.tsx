@@ -406,7 +406,7 @@ export default function Component() {
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1" />
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <Card className="bg-white/90 backdrop-blur-sm border-2 border-pink-200 rounded-3xl shadow-xl hover:shadow-2xl transition-all p-3 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
