@@ -225,13 +225,13 @@ export default function Component() {
                 <h1 className="text-4xl md:text-5xl font-extrabold text-pink-600 font-serif tracking-wide animate-welcome">
                   Welcome to Sugar Blooms!
                 </h1>
-                <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto pt-8">
+                <div className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto pt-8">
                   <p className="text-lg md:text-xl text-pink-500 font-medium leading-relaxed max-w-3xl mx-auto">
                     Discover the magic of handcrafted cupcakes, made with love
                     and the finest ingredients. Perfect for every celebration,
                     big or small.
                   </p>
-                </p>
+                </div>
 
                 <div className="mt-6 flex justify-center gap-4">
                   <a
