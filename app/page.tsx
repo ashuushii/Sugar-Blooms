@@ -226,8 +226,27 @@ export default function Component() {
                   Welcome to Sugar Blooms!
                 </h1>
                 <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto pt-8">
-                  Freshly baked happiness, just for you
+                  <p className="text-lg md:text-xl text-pink-500 font-medium leading-relaxed max-w-3xl mx-auto">
+                    Discover the magic of handcrafted cupcakes, made with love
+                    and the finest ingredients. Perfect for every celebration,
+                    big or small.
+                  </p>
                 </p>
+
+                <div className="mt-6 flex justify-center gap-4">
+                  <a
+                    href="/cupcakes"
+                    className="bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
+                  >
+                    Explore Cupcakes
+                  </a>
+                  <a
+                    href="/contact"
+                    className="bg-pink-50 text-pink-600 hover:text-pink-800 border border-pink-200 font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
+                  >
+                    Contact Us
+                  </a>
+                </div>
               </div>
               <div
                 className="transform transition-all duration-700 ease-out"

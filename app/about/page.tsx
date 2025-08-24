@@ -22,7 +22,7 @@ export default function AboutPage() {
             <div className="flex items-center justify-center gap-4 mb-12">
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
               <span className="text-pink-500 text-sm font-medium">
-                We believe in the power of sweetness to bring people together.
+                Baked with Love
               </span>
               <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
             </div>
@@ -37,32 +37,36 @@ export default function AboutPage() {
               alt="anime style illustration of a baker decorating cupcakes"
               width={400}
               height={400}
-              className="w-full max-w-[300px] md:max-w-[400px] rounded-3xl shadow-2xl border-4 border-white relative z-0"
+              className="w-full max-w-[300px] md:max-w-[400px] aspect-square rounded-3xl shadow-2xl border-4 border-white relative z-0"
             />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
             <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
               <h2 className="text-2xl font-bold text-pink-600 mb-4 font-serif">
-                Our Story
+                My Story
               </h2>
               <p className="text-base md:text-s text-pink-700 leading-relaxed mb-4">
-                What began as a simple hobby in my cozy London kitchen quickly
-                became a passion for creating joy, one cupcake at a time.
-              </p>
-              <p className="text-base md:text-s text-pink-700 leading-relaxed">
-                Every swirl of buttercream, every delicate bow, and every
-                sprinkle is placed with intention and love.
+                Sugar Blooms began not just as a hobby, but as a way to bring
+                beauty and joy into the everyday. From my little London kitchen
+                came the idea that cupcakes could be more than dessert - they
+                could be a gift, a memory, an experience wrapped in pink and
+                tied with a bow. Every swirl of buttercream and every carefully
+                placed detail is designed to make you pause, smile, and feel a
+                little bit more celebrated.
               </p>
             </div>
 
             <div className="bg-pink-50 rounded-2xl p-6 border-2 border-pink-200">
               <h3 className="text-2xl font-bold text-pink-600 mb-4 font-serif">
-                Our Mission
+                My Mission
               </h3>
               <p className="text-base md:text-s text-rose-700 leading-relaxed">
-                To turn everyday moments into celebrations and make your day a
-                little brighter, a lot sweeter.
+                At Sugar Blooms, our mission is to create cupcakes that go
+                beyond flavour - they capture a feeling. Each order is an
+                invitation to slow down, indulge, and make an ordinary day feel
+                extraordinary. We don’t just bake treats, we craft moments of
+                joy that stay with you long after the last crumb.
               </p>
             </div>
           </div>
