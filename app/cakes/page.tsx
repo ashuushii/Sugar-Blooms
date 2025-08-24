@@ -10,8 +10,7 @@ export default function CupcakesPage() {
   const cakeCategories = [
     {
       title: "",
-      description:
-        "",
+      description: "",
       cakes: [
         {
           name: "Classic Vanilla",
