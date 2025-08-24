@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { BowBackground } from "@/components/BowBackground";
+import Head from "next/head";
 
 export default function Calculator() {
   const [result, setResult] = useState("");
@@ -142,10 +143,34 @@ export default function Calculator() {
 
   return (
     <main className="relative z-10 min-h-screen pt-40 pb-20 flex items-center justify-center">
+      <Head>
+        <title>Baking Calculator | Sugar Blooms</title>
+        <meta
+          name="description"
+          content="Easily convert baking measurements for ingredients like flour, sugar, and more. Simplify your baking process with our precise calculator."
+        />
+        <meta
+          name="keywords"
+          content="baking calculator, ingredient conversions, flour conversions, sugar conversions, baking measurements, Sugar Blooms"
+        />
+        <meta name="author" content="Sugar Blooms" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Baking Calculator | Sugar Blooms" />
+        <meta
+          property="og:description"
+          content="Easily convert baking measurements for ingredients like flour, sugar, and more. Simplify your baking process with our precise calculator."
+        />
+        <meta property="og:image" content="/calculator-preview.png" />
+        <meta
+          property="og:url"
+          content="https://sugarblooms.co.uk/calculator"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
       <BowBackground />
       <div className="container mx-auto text-center max-w-xl space-y-4">
         <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif mb-6">
-          Baking Calculator
+          My Baking Calculator
         </h1>
         <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
           Convert units for your favorite baking ingredients with precision and

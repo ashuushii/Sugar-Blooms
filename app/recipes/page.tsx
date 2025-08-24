@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Heart, Clock, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Head from "next/head";
 
 export default function RecipesPage() {
   // ========================================
@@ -168,243 +169,255 @@ export default function RecipesPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-20">
-      <section className="pt-8 pb-18 px-4 relative">
-        <div className="container mx-auto text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-6">
-              <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
-                Sweet Recipes
-              </h1>
-            </div>
-            <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
-              Bake with Love and Create Your Own Sweet Magic at Home
-            </p>
-            <div className="flex items-center justify-center gap-4 mb-4"></div>
-            <div className="flex items-center justify-center gap-4">
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
-              <span className="text-pink-500 text-sm font-medium">
-                Cupcakes & Frosting Recipes
-              </span>
-              <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+    <>
+      <Head>
+        <title>Cupcake Recipes | Sugar Blooms</title>
+        <meta
+          name="description"
+          content="Explore our collection of cupcake and frosting recipes to bake your own sweet treats."
+        />
+        <meta
+          name="keywords"
+          content="cupcake recipes, frosting recipes, Sugar Blooms"
+        />
+      </Head>
+      <div className="min-h-screen pt-32 pb-20">
+        <section className="pt-8 pb-18 px-4 relative">
+          <div className="container mx-auto text-center relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
+                  Sweet Recipes
+                </h1>
+              </div>
+              <p className="text-base md:text-lg text-pink-700/80 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
+                Bake with Love and Create Your Own Sweet Magic at Home
+              </p>
+              <div className="flex items-center justify-center gap-4 mb-4"></div>
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+                <span className="text-pink-500 text-sm font-medium">
+                  Cupcakes & Frosting Recipes
+                </span>
+                <div className="h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent flex-1 max-w-20" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ========================================
+        {/* ========================================
       CUPCAKE RECIPES SECTION
       ======================================== */}
-      <section className="py-8 px-4 relative">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            {/* CHANGE SECTION TITLE HERE */}
-            <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
-              Cupcake Recipes
-            </h2>
-          </div>
+        <section className="py-8 px-4 relative">
+          <div className="container mx-auto">
+            <div className="text-center mb-16">
+              {/* CHANGE SECTION TITLE HERE */}
+              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
+                Cupcake Recipes
+              </h2>
+            </div>
 
-          {/* RECIPE CARDS - These automatically generate from the cupcakeRecipes array above */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {cupcakeRecipes.map((recipe, index) => (
-              <Card
-                key={index}
-                className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-                </div>
-                <CardHeader className="pb-4 relative">
-                  <div className="relative mb-4 overflow-hidden rounded-2xl">
-                    {/* IMAGE: Use correct cupcake image for each recipe */}
-                    <Image
-                      src={
-                        recipe.name === "Classic Vanilla Cupcakes"
-                          ? "/vanillacupcakes.jpeg"
-                          : recipe.name === "Chocolate Dream Cupcakes"
-                          ? "/chocolatecupcakes.jpeg"
-                          : recipe.name === "Strawberry Bliss Cupcakes"
-                          ? "/strawberrycupcakes.jpeg"
-                          : "/cupcakes-box.jpeg"
-                      }
-                      alt={recipe.name}
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover transition-transform hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
+            {/* RECIPE CARDS - These automatically generate from the cupcakeRecipes array above */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+              {cupcakeRecipes.map((recipe, index) => (
+                <Card
+                  key={index}
+                  className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
+                >
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">
-                    {recipe.name}
-                  </CardTitle>
-                  <div className="flex items-center gap-4 text-sm text-pink-700">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{recipe.prepTime}</span>
+                  <CardHeader className="pb-4 relative">
+                    <div className="relative mb-4 overflow-hidden rounded-2xl">
+                      {/* IMAGE: Use correct cupcake image for each recipe */}
+                      <Image
+                        src={
+                          recipe.name === "Classic Vanilla Cupcakes"
+                            ? "/vanillacupcakes.jpeg"
+                            : recipe.name === "Chocolate Dream Cupcakes"
+                            ? "/chocolatecupcakes.jpeg"
+                            : recipe.name === "Strawberry Bliss Cupcakes"
+                            ? "/strawberrycupcakes.jpeg"
+                            : "/cupcakes-box.jpeg"
+                        }
+                        alt={recipe.name}
+                        width={300}
+                        height={200}
+                        className="w-full h-48 object-cover transition-transform hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>{recipe.serves}</span>
+                    <CardTitle className="text-xl font-bold text-pink-600 font-serif">
+                      {recipe.name}
+                    </CardTitle>
+                    <div className="flex items-center gap-4 text-sm text-pink-700">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        <span>{recipe.prepTime}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users className="w-4 h-4" />
+                        <span>{recipe.serves}</span>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="mb-4">
-                    <h4 className="font-bold text-pink-600 mb-2">
-                      Ingredients:
-                    </h4>
-                    <ul className="text-sm text-pink-700 space-y-1">
-                      {recipe.ingredients.map((ingredient, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <Heart className="w-3 h-3 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
-                          <span>{ingredient}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-pink-600 mb-2">
-                      Instructions:
-                    </h4>
-                    <ol className="text-sm text-pink-700 space-y-2">
-                      {recipe.instructions.map((step, i) => (
-                        <li key={i} className="flex gap-2">
-                          <span className="bg-pink-200 text-pink-600 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
-                            {i + 1}
-                          </span>
-                          <span>{step}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="mb-4">
+                      <h4 className="font-bold text-pink-600 mb-2">
+                        Ingredients:
+                      </h4>
+                      <ul className="text-sm text-pink-700 space-y-1">
+                        {recipe.ingredients.map((ingredient, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <Heart className="w-3 h-3 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
+                            <span>{ingredient}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-pink-600 mb-2">
+                        Instructions:
+                      </h4>
+                      <ol className="text-sm text-pink-700 space-y-2">
+                        {recipe.instructions.map((step, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="bg-pink-200 text-pink-600 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                              {i + 1}
+                            </span>
+                            <span>{step}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ========================================
+        {/* ========================================
           FROSTING RECIPES SECTION
           ======================================== */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
-              Frosting Recipes
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {frostingRecipes.map((recipe, index) => (
-              <Card
-                key={index}
-                className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
-              >
-                <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-                </div>
-                <CardHeader className="pb-4 relative">
-                  <div className="relative mb-4 overflow-hidden rounded-2xl">
-                    <Image
-                      src={recipe.image || "/placeholder.jpg"}
-                      alt={recipe.name}
-                      width={300}
-                      height={200}
-                      className="w-full h-48 object-cover transition-transform hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
+        <section className="py-20 px-4 relative">
+          <div className="container mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-4 font-serif">
+                Frosting Recipes
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+              {frostingRecipes.map((recipe, index) => (
+                <Card
+                  key={index}
+                  className="bg-white/90 backdrop-blur-sm border-3 border-pink-200 rounded-3xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 hover:-translate-y-2 relative overflow-hidden"
+                >
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-pink-600 font-serif">
-                    {recipe.name}
-                  </CardTitle>
-                  <div className="flex items-center gap-4 text-sm text-pink-700">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{recipe.prepTime}</span>
+                  <CardHeader className="pb-4 relative">
+                    <div className="relative mb-4 overflow-hidden rounded-2xl">
+                      <Image
+                        src={recipe.image || "/placeholder.jpg"}
+                        alt={recipe.name}
+                        width={300}
+                        height={200}
+                        className="w-full h-48 object-cover transition-transform hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-pink-50/20 to-transparent" />
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>{recipe.serves}</span>
+                    <CardTitle className="text-xl font-bold text-pink-600 font-serif">
+                      {recipe.name}
+                    </CardTitle>
+                    <div className="flex items-center gap-4 text-sm text-pink-700">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        <span>{recipe.prepTime}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users className="w-4 h-4" />
+                        <span>{recipe.serves}</span>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="mb-4">
-                    <h4 className="font-bold text-pink-600 mb-2">
-                      Ingredients:
-                    </h4>
-                    <ul className="text-sm text-pink-700 space-y-1">
-                      {recipe.ingredients.map((ingredient, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <Heart className="w-3 h-3 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
-                          <span>{ingredient}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-pink-600 mb-2">
-                      Instructions:
-                    </h4>
-                    <ol className="text-sm text-pink-700 space-y-2">
-                      {recipe.instructions.map((step, i) => (
-                        <li key={i} className="flex gap-2">
-                          <span className="bg-pink-200 text-pink-600 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
-                            {i + 1}
-                          </span>
-                          <span>{step}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="mb-4">
+                      <h4 className="font-bold text-pink-600 mb-2">
+                        Ingredients:
+                      </h4>
+                      <ul className="text-sm text-pink-700 space-y-1">
+                        {recipe.ingredients.map((ingredient, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <Heart className="w-3 h-3 text-pink-400 fill-pink-400 mt-1 flex-shrink-0" />
+                            <span>{ingredient}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-pink-600 mb-2">
+                        Instructions:
+                      </h4>
+                      <ol className="text-sm text-pink-700 space-y-2">
+                        {recipe.instructions.map((step, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="bg-pink-200 text-pink-600 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                              {i + 1}
+                            </span>
+                            <span>{step}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ========================================
+        {/* ========================================
           CALL-TO-ACTION SECTION
           ======================================== */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto text-center">
-          <div className="max-w-3xl mx-auto bg-white rounded-3xl p-12 border-3 border-pink-200 shadow-2xl">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-              {/* CHANGE CALL-TO-ACTION TITLE HERE */}
-              <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
-                Love These Recipes?
-              </h2>
-              <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
-            </div>
-            {/* CHANGE CALL-TO-ACTION TEXT HERE */}
-            <p className="text-xl text-pink-700/80 mb-8 leading-relaxed">
-              Share your baking creations with us! We love seeing your sweet
-              masterpieces
-            </p>
-            {/* CHANGE INSTAGRAM LINK AND TEXT HERE */}
-            <Button
-              className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform hover:scale-105 transition-all"
-              asChild
-            >
-              <a
-                href="https://instagram.com/sugarbloomsco"
-                target="_blank"
-                rel="noopener noreferrer"
+        <section className="py-20 px-4 relative">
+          <div className="container mx-auto text-center">
+            <div className="max-w-3xl mx-auto bg-white rounded-3xl p-12 border-3 border-pink-200 shadow-2xl">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
+                {/* CHANGE CALL-TO-ACTION TITLE HERE */}
+                <h2 className="text-3xl md:text-4xl font-bold text-pink-600 font-serif">
+                  Love These Recipes?
+                </h2>
+                <Heart className="w-6 h-6 text-pink-400 fill-pink-400" />
+              </div>
+              {/* CHANGE CALL-TO-ACTION TEXT HERE */}
+              <p className="text-xl text-pink-700/80 mb-8 leading-relaxed">
+                Share your baking creations with us! We love seeing your sweet
+                masterpieces
+              </p>
+              {/* CHANGE INSTAGRAM LINK AND TEXT HERE */}
+              <Button
+                className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform hover:scale-105 transition-all"
+                asChild
               >
-                Tag @sugarbloomsco
-              </a>
-            </Button>
+                <a
+                  href="https://instagram.com/sugarbloomsco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tag @sugarbloomsco
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ========================================
+        {/* ========================================
           FUTURE SECTIONS - UNCOMMENT TO ADD
           ======================================== */}
 
-      {/* EXAMPLE: Add a new section for tips or featured bakers
+        {/* EXAMPLE: Add a new section for tips or featured bakers
       <section className="py-20 px-4 bg-pink-50/30 relative">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold text-pink-600 mb-8 font-serif">baking tips</h2>
@@ -413,6 +426,7 @@ export default function RecipesPage() {
         </div>
       </section>
       */}
-    </div>
+      </div>
+    </>
   );
 }

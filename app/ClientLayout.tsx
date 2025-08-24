@@ -4,7 +4,14 @@ import type React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { Menu, X, Instagram, Search } from "lucide-react";
+import {
+  Menu,
+  X,
+  Instagram,
+  Search,
+  Heart,
+  ArrowRightLeft,
+} from "lucide-react";
 import { BowBackground } from "@/components/BowBackground";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SearchOverlay } from "@/components/ui/search-overlay";
@@ -312,34 +319,14 @@ export default function ClientLayout({
                         href="/calculator"
                         className="text-pink-700 hover:text-pink-800 transition-colors text-lg flex items-center gap-2"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          fill="currentColor"
-                          className="text-pink-600"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" />
-                          <path d="M2 5h12V4H2v1zm2 2h2V6H4v1zm0 2h2V8H4v1zm0 2h2v-1H4v1zm3-4h2V6H7v1zm0 2h2V8H7v1zm0 2h2v-1H7v1zm3-4h2V6h-2v1zm0 2h2V8h-2v1zm0 2h2v-1h-2v1z" />
-                        </svg>
+                        <ArrowRightLeft className="w-5 h-5 text-pink-600" />
                         Calculator
                       </a>
                       <a
                         href="/recommendations"
                         className="text-pink-700 hover:text-pink-800 transition-colors text-lg flex items-center gap-2"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          fill="currentColor"
-                          className="text-pink-600"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm0 15A7 7 0 1 1 15 8a7 7 0 0 1-7 7z" />
-                          <path d="M8 4a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm0 7A3 3 0 1 1 11 8a3 3 0 0 1-3 3z" />
-                        </svg>
+                        <Heart className="w-5 h-5 text-pink-600" />
                         Recommendations
                       </a>
                     </div>

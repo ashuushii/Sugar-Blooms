@@ -184,7 +184,15 @@ export default function Component() {
   return (
     <main>
       <Head>
-        <title>Sugar Blooms Cupcake Bakery | London</title>
+        <title>Sugar Blooms | London Cupcake Bakery</title>
+        <meta
+          name="description"
+          content="Sugar Blooms is a London-based bakery specializing in handcrafted cupcakes and sweet treats."
+        />
+        <meta
+          name="keywords"
+          content="London cupcakes, bakery, handcrafted cupcakes, Sugar Blooms"
+        />
         <meta
           name="description"
           content="Sugar Blooms is a London-based bakery specializing in handcrafted cupcakes, custom orders, and sweet treats made with love, sprinkles, and a touch of magic."
