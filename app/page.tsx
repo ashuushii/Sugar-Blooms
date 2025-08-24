@@ -325,10 +325,10 @@ export default function Component() {
                             <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                               {feature.icon}
                             </div>
-                            <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
+                            <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-base md:text-lg">
                               {feature.title}
                             </h3>
-                            <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
+                            <p className="text-pink-700 leading-relaxed text-sm md:text-base lg:text-lg">
                               {feature.description}
                             </p>
                           </CardContent>
@@ -338,10 +338,10 @@ export default function Component() {
                           <div className="bg-pink-50 w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                             {feature.icon}
                           </div>
-                          <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-sm md:text-base">
+                          <h3 className="font-bold text-pink-600 mb-1 md:mb-2 lg:mb-3 font-serif text-base md:text-lg">
                             {feature.title}
                           </h3>
-                          <p className="text-pink-700 leading-relaxed text-xs md:text-sm lg:text-base">
+                          <p className="text-pink-700 leading-relaxed text-sm md:text-base lg:text-lg">
                             {feature.description}
                           </p>
                         </CardContent>

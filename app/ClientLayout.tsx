@@ -320,14 +320,14 @@ export default function ClientLayout({
                         className="text-pink-700 hover:text-pink-800 transition-colors text-lg flex items-center gap-2"
                       >
                         <ArrowRightLeft className="w-5 h-5 text-pink-600" />
-                        Calculator
+                        Baking Calculator
                       </a>
                       <a
                         href="/recommendations"
                         className="text-pink-700 hover:text-pink-800 transition-colors text-lg flex items-center gap-2"
                       >
                         <Heart className="w-5 h-5 text-pink-600" />
-                        Recommendations
+                        Product Recommendations
                       </a>
                     </div>
                   </div>
